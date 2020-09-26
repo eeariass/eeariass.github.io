@@ -1,11 +1,13 @@
 entries:
-  - title: me
+  - title: me?
     url: false
     entries:
       - title: email
         url: mailto:eeariass@gmail.com
       - title: github
         url: http://github.com/eeariass/
+      - title: twitter
+        url: https://twitter.com/eeariass 
       - title: keep in touch
         url: false
         entries:
