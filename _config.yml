@@ -3,7 +3,7 @@ email: eeariass@outlook.com
 about: elvinArias, CCIEx2 #57046 (Enterprise, Service Provider) 
 description: elvin's thoughts
 baseurl: "" # the subpath of your site, e.g. /blog
-url: ""
+url: "eeariass.github.io"
 github_username:  eeariass
 
 permalink: /:slug.html
