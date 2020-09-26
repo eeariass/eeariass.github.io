@@ -13,8 +13,6 @@ entries:
         entries:
           - title: newsletter
             url: /newsletter.html
-          - title: rss
-            url: /feed.xml
 
   - title: thoughts
     post_list: true
