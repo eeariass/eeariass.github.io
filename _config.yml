@@ -1,14 +1,14 @@
-title: riggraz
-email: riccardo.graziosi97@gmail.com
-description: riggraz's thoughts
+title: elvin
+email: eeariass@gmail.com
+description: elvin's non-deterministic thoughts
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://riggraz.dev"
-github_username:  riggraz
+url: "eeariass.github.io"
+github_username:  eeariass
 
 permalink: /:slug.html
 
 favicon: "./favicon.png" # relative path to site's favicon
-goat_counter: "riggraz" # put your GoatCounter name if you want to use GoatCounter analytics
+goat_counter: "elvin" # put your GoatCounter name if you want to use GoatCounter analytics
 
 # Build settings
 remote_theme: riggraz/no-style-please
