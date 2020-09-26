@@ -4,7 +4,7 @@ twitter: https://twitter.com/eeariass
 about: elvinArias, CCIEx2 #57046 (Enterprise, Service Provider) 
 description: elvin's thoughts
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "eeariass.github.io"
+url: ""
 github_username:  eeariass
 
 permalink: /:slug.html
@@ -17,7 +17,7 @@ remote_theme: riggraz/no-style-please
 
 theme_config:
   appearance: "light"
-  back_home_text: ".." # customize text for homepage link in post layout
+  back_home_text: "<-" # customize text for homepage link in post layout
   date_format: "%Y-%m-%d" # customize how date is formatted
   show_description: false # show blog description in home page
 
