@@ -1,7 +1,7 @@
 title: elvin
 email: eeariass@gmail.com
 description: elvin's non-deterministic thoughts
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "eeariass.github.io" # the subpath of your site, e.g. /blog
 url: "eeariass.github.io"
 github_username:  eeariass
 
