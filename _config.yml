@@ -1,10 +1,8 @@
-title: elvin's resources
+title: elvin
 email: eeariass@outlook.com
-twitter: https://twitter.com/eeariass
-about: elvinArias, CCIEx2 #57046 (Enterprise, Service Provider) 
 description: elvin's thoughts
 baseurl: "" # the subpath of your site, e.g. /blog
-url: ""
+url: "eeariass.github.io"
 github_username:  eeariass
 
 permalink: /:slug.html
