@@ -2,12 +2,12 @@ title: elvin's resources
 email: eeariass@outlook.com
 description: elvin's thoughts
 baseurl: "" # the subpath of your site, e.g. /blog
-url: ""
+url: "eeariass.github.io"
 github_username:  eeariass
 
 permalink: /:slug.html
 
-favicon: "./router.jpg" # relative path to site's favicon
+favicon: "./router.png" # relative path to site's favicon
 goat_counter: "eeariass" # put your GoatCounter name if you want to use GoatCounter analytics
 
 # Build settings
