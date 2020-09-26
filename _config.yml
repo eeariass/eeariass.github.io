@@ -2,7 +2,7 @@ title: elvin's resources
 email: eeariass@outlook.com
 description: elvin's thoughts
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "eeariass.github.io"
+url: ""
 github_username:  eeariass
 
 permalink: /:slug.html
