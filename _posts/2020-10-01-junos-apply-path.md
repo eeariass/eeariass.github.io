@@ -80,7 +80,7 @@ policy-options {
     }
 }
 ```
-If we want to see what is the `apply path` matching, the usual check won't work, instead, we would need to add the switch `display inheritance` in order to see what is being parsed. Verification of apply path inheritance is shown below.
+If we want to see what is the `apply-path` matching, the usual check won't work, instead, we would need to add the switch `display inheritance` in order to see what is being parsed. Verification of apply-path inheritance is shown below.
 
 #### Example 3 - Checking prefix-list with apply-path
 ```
@@ -93,7 +93,7 @@ root@r1# show policy-options prefix-list BGP-PEER | display inheritance
 apply-path "protocols bgp group <*> neighbor <*>";
 ```
 
-If we add a new BGP peer in r1, the apply path would be updated automatically.
+If we add a new BGP peer in r1, the apply-path would be updated automatically.
 
 ```
 [edit]
