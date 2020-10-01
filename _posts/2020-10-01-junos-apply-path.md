@@ -1,4 +1,10 @@
-## Juniper tips: Apply Paths in Junos
+---
+layout: post
+title: Understanding junos apply-path
+slug: junos-apply-path.md
+---
+
+## Understanding junos `apply-path`
 
 The `apply-path` feature allows for secure and simplified configuration parsing of [mostly] IP addresses in the Junos software. 
 
