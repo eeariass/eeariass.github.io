@@ -20,6 +20,8 @@ The configuration to accomplish this is fairly simple, since we know the IP addr
 #### Example 1 - Allowing R1 BGP peer, rejecting everything else with static prefix-list.
 
 ```
+# R1 configuration:
+
 policy-options {
     prefix-list BGP-PEER {
         10.1.2.2/32;
