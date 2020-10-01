@@ -4,15 +4,15 @@ title: Understanding junos apply-path feature
 slug: junos-apply-path.md
 ---
 
-Junos apply-path feature allows for secure and simplified configuration parsing of [mostly] IP addresses in the Junos software.
+Junos apply-path feature allows for secure and simplified configuration parsing of IP addresses in the Junos software.
 
-How it works? A matching condition is created under a particular hierarchy, based on this junos is able to get the values (mostly IP addresses) to be expanded based on the current configuration.
+How it works? A matching condition is created under a particular hierarchy, based on this junos is able to get the values to be expanded based on the current configuration.
 ### Scenario 1: Enhancing BGP security with apply-path
 In this network we have setup pair of router connected via eBGP, due to security reasons we need to apply a `firewall filter` to reject connections from source IP addresses other than those configured within the BGP group in R1 to avoid any external malicious source from attempting to connect to our edge router R1.
 
 #### Image 1 - my $bgp_peers topology
 ```
-`R1`<|.1--------------.2|>`R2`
+R1<|.1--------------.2|>R2
          10.1.2.0/24
 ```
 The configuration to accomplish this is fairly simple, since we know the IP address of our peer, we craft a `firewall filter` that allows port 179 from peer IP address.
@@ -49,7 +49,29 @@ family inet {
     }
 }
 ```
-As observed this is fairly straightforward. Let's say R1 now needs to peer with 50 more routers a new router within that same BGP group. This clearly become cumbersome, since we would need to add new IP addresses per BGP peer we configure. This is prone to configuration error and/or forgetting to add the new peer IP's under the prefix-list leaving the edge interface unprotected.  This where apply-path feature comes into play.
+
+If a source IP address other than 10.1.2.2 attempts to connect to R1 via port 179, it will be rejected.
+
+```
+root@r2# run telnet 10.1.2.1 source 2.2.2.2 port 179
+Trying 10.1.2.1...
+telnet: connect to address 10.1.2.1: Connection refused
+telnet: Unable to connect to remote host
+```
+
+```
+root@r1# run show firewall
+
+Filter: __default_bpdu_filter__
+
+Filter: EDGE-BGP-PROTECTION
+Counters:
+Name                                                Bytes              Packets
+ELSE-REJECT                                           192                    3 <<< !
+PEER-ONLY                                           22630                  365 
+```
+
+As observed this is fairly straightforward. Let's say R1 now needs to peer with 50 more routers a new router within that same BGP group. This clearly become cumbersome, since we would need to add new IP addresses per BGP peer we configure. This is prone to configuration error and/or forgetting to add the new peer IP's under the prefix-list leaving the edge interface unprotected. This where apply-path feature comes into play.
 
 Instead of updating `prefix-lists` to match the BGP peer address, we create a *single* apply-path and inherit the peer IP address from the configuration automatically, this then is passed to `prefix-list` which will contain the list of peer IP's.
 
