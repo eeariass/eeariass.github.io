@@ -1,22 +1,19 @@
 ---
 layout: post
-title: Understanding junos apply-path
+title: Understanding junos apply-path feature
 slug: junos-apply-path.md
 ---
 
-## Understanding junos `apply-path`
-
-The `apply-path` feature allows for secure and simplified configuration parsing of [mostly] IP addresses in the Junos software. 
+`apply-path` feature allows for secure and simplified configuration parsing of [mostly] IP addresses in the Junos software.
 
 How it works? A matching condition is created under a particular hierarchy, based on this junos is able to get the values (mostly IP addresses) to be expanded based on the current configuration.
 
-Scenario 1: Enhancing BGP security with `apply-path`
+### Scenario 1: Enhancing BGP security with `apply-path`
 
-In this network we have setup a eBGP peer, due to security reasons we need to apply a `firewall filter` to reject connections from source IP addresses other than those configured within the BGP group in R1.
+In this network we have setup pair of router connected via eBGP, due to security reasons we need to apply a `firewall filter` to reject connections from source IP addresses other than those configured within the BGP group in R1 to avoid any external malicious source from attempting to connect to our edge router R1.
 
-Image 1 - my $bgp_peers
+#### Image 1 - my $bgp_peers
 
-myAS(1)              extAS(2)
 `R1`<|.1--------------.2|>`R2`
           10.1.2.0/24
 
@@ -24,7 +21,7 @@ The configuration to accomplish this is fairly simple, since we know the IP addr
 
 Example 1 - Allowing R1 BGP peer, rejecting everything else with static prefix-list.
 
-### Prefix-list
+#### Prefix-list
 ```
 policy-options {
     prefix-list BGP-PEER {
@@ -33,7 +30,7 @@ policy-options {
 }
 ```
 
-### Firewall filter
+#### Firewall filter
 ```
 root@r1# show firewall
 family inet {
@@ -69,7 +66,7 @@ If we delete, add, rename IP's, the `apply-path` would be updated dynamically.
 
 Example 2 - Allowing R1 BGP peer, rejecting everything else with `apply-path`
 
-### apply-path parsing BGP group IP address
+#### apply-path parsing BGP group IP address
 ```
 policy-options {
     prefix-list BGP-PEER {
@@ -97,10 +94,11 @@ apply-path "protocols bgp group <*> neighbor <*>";
 
 If we add a new BGP peer, the apply path would be updated automatically.
 
-### Adding a new BGP peer
+#### Adding a new BGP peer
 ```
 root@r1# copy protocols bgp group myPeerAS2 neighbor 10.1.2.2 to neighbor 10.1.2.3
 ```
+
 ```
 [edit]
 root@r1# show | compare
@@ -125,7 +123,8 @@ root@r1# commit
 commit complete
 ```
 
-### Checking prefix-list
+#### Checking prefix-list
+
 ```
 [edit]
 root@r1# show policy-options prefix-list BGP-PEER | display inheritance
@@ -137,4 +136,4 @@ root@r1# show policy-options prefix-list BGP-PEER | display inheritance
 apply-path "protocols bgp group <*> neighbor <*>";
 ```
 
-To finish, beyond BGP, this has many other applications, such as TACACs, RADIUS, NTP, and parsing other hierarchies within the configuration.
+Beyond BGP, we can use it for other protocols such as RADIUS, TACACS, NTP, etc.
