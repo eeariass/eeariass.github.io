@@ -1,0 +1,134 @@
+## Juniper tips: Apply Paths in Junos
+
+The `apply-path` feature allows for secure and simplified configuration parsing of [mostly] IP addresses in the Junos software. 
+
+How it works? A matching condition is created under a particular hierarchy, based on this junos is able to get the values (mostly IP addresses) to be expanded based on the current configuration.
+
+Scenario 1: Enhancing BGP security with `apply-path`
+
+In this network we have setup a eBGP peer, due to security reasons we need to apply a `firewall filter` to reject connections from source IP addresses other than those configured within the BGP group in R1.
+
+Image 1 - my $bgp_peers
+
+myAS(1)              extAS(2)
+`R1`<|.1--------------.2|>`R2`
+          10.1.2.0/24
+
+The configuration to accomplish this is fairly simple, since we know the IP address of our peer, we craft a `firewall filter` that allows port 179 from peer IP address.
+
+Example 1 - Allowing R1 BGP peer, rejecting everything else with static prefix-list.
+
+### Prefix-list
+```
+policy-options {
+    prefix-list BGP-PEER {
+        10.1.2.2/32;
+    }
+}
+```
+
+### Firewall filter
+```
+root@r1# show firewall
+family inet {
+    filter EDGE-BGP-PROTECTION {
+        term ALLOW-PEER-ONLY {
+            from {
+                source-prefix-list {
+                    BGP-PEER;
+                }
+                protocol tcp;
+                destination-port bgp;
+            }
+            then {
+                count PEER-ONLY;
+                accept;
+            }
+        }
+        term ELSE-REJECT {
+            then {
+                count ELSE-REJECT;
+                reject;
+            }
+        }
+    }
+}
+```
+
+As observed this is fairly straightforward. Let's say R1 now needs to peer with 50 more routers a new router within that same BGP group. This clearly become cumbersome, since we would need to add new IP addresses per BGP peer we configure. This is prone to configuration error and/or forgetting to add the new peer IP's under the prefix-list leaving the edge interface unprotected.  This where `apply-path` feature comes into play. 
+
+Instead of updating `prefix-lists` to match the BGP peer address, we create a *single* `apply-path` and inherit the peer IP address from the configuration automatically, this then is passed to `prefix-list` which will contain the list of peer IP's. 
+
+If we delete, add, rename IP's, the `apply-path` would be updated dynamically. 
+
+Example 2 - Allowing R1 BGP peer, rejecting everything else with `apply-path`
+
+### apply-path parsing BGP group IP address
+```
+policy-options {
+    prefix-list BGP-PEER {
+        apply-path "protocols bgp group <*> neighbor <*>";
+    }
+    policy-statement ACCEPT {
+        then accept;
+    }
+}
+```
+
+If we want to see what is the `apply path` matching, the usual check won't work, instead, we would need to add the switch `display inheritance` in order to see what is being parsed. Verification of apply path inheritance is shown below.
+
+Example 3 - Checking prefix-list with `apply-path`
+
+```
+[edit]
+root@r1# show policy-options prefix-list BGP-PEER | display inheritance
+##
+## apply-path was expanded to:
+##     10.1.2.2/32;
+##
+apply-path "protocols bgp group <*> neighbor <*>";
+```
+
+If we add a new BGP peer, the apply path would be updated automatically.
+
+### Adding a new BGP peer
+```
+root@r1# copy protocols bgp group myPeerAS2 neighbor 10.1.2.2 to neighbor 10.1.2.3
+```
+```
+[edit]
+root@r1# show | compare
+[edit protocols bgp group myPeerAS2]
+      neighbor 10.1.2.2 { ... }
++     neighbor 10.1.2.3 {
++         description "to peer r3-AS2";
++         enforce-first-as;
++         import ACCEPT;
++         family inet {
++             unicast;
++         }
++         export ACCEPT;
++         remove-private {
++             all;
++         }
++         peer-as 2;
++     }
+
+[edit]
+root@r1# commit
+commit complete
+```
+
+### Checking prefix-list
+```
+[edit]
+root@r1# show policy-options prefix-list BGP-PEER | display inheritance
+##
+## apply-path was expanded to:
+##     10.1.2.2/32;
+##     10.1.2.3/32; << ! New prefix added
+##
+apply-path "protocols bgp group <*> neighbor <*>";
+```
+
+To finish, beyond BGP, this has many other applications, such as TACACs, RADIUS, NTP, and parsing other hierarchies within the configuration.
