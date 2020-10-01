@@ -7,19 +7,16 @@ slug: junos-apply-path.md
 `apply-path` feature allows for secure and simplified configuration parsing of [mostly] IP addresses in the Junos software.
 
 How it works? A matching condition is created under a particular hierarchy, based on this junos is able to get the values (mostly IP addresses) to be expanded based on the current configuration.
-
 ### Scenario 1: Enhancing BGP security with `apply-path`
-
 In this network we have setup pair of router connected via eBGP, due to security reasons we need to apply a `firewall filter` to reject connections from source IP addresses other than those configured within the BGP group in R1 to avoid any external malicious source from attempting to connect to our edge router R1.
 
 #### Image 1 - my $bgp_peers
-
 `R1`<|.1--------------.2|>`R2`
-          10.1.2.0/24
+         `10.1.2.0/24`
 
 The configuration to accomplish this is fairly simple, since we know the IP address of our peer, we craft a `firewall filter` that allows port 179 from peer IP address.
 
-Example 1 - Allowing R1 BGP peer, rejecting everything else with static prefix-list.
+#### Example 1 - Allowing R1 BGP peer, rejecting everything else with static prefix-list.
 
 #### Prefix-list
 ```
@@ -64,7 +61,7 @@ Instead of updating `prefix-lists` to match the BGP peer address, we create a *s
 
 If we delete, add, rename IP's, the `apply-path` would be updated dynamically. 
 
-Example 2 - Allowing R1 BGP peer, rejecting everything else with `apply-path`
+#### Example 2 - Allowing R1 BGP peer, rejecting everything else with `apply-path`
 
 #### apply-path parsing BGP group IP address
 ```
@@ -80,7 +77,7 @@ policy-options {
 
 If we want to see what is the `apply path` matching, the usual check won't work, instead, we would need to add the switch `display inheritance` in order to see what is being parsed. Verification of apply path inheritance is shown below.
 
-Example 3 - Checking prefix-list with `apply-path`
+#### Example 3 - Checking prefix-list with `apply-path`
 
 ```
 [edit]
