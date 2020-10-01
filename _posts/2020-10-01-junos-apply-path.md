@@ -50,25 +50,13 @@ family inet {
 }
 ```
 
-If a source IP address other than 10.1.2.2 attempts to connect to R1 via port 179, it will be rejected.
+If a source IP address other than 10.1.2.2 attempts to connect to R1 via port 179 it would be discarded.
 
 ```
 root@r2# run telnet 10.1.2.1 source 2.2.2.2 port 179
 Trying 10.1.2.1...
 telnet: connect to address 10.1.2.1: Connection refused
 telnet: Unable to connect to remote host
-```
-
-```
-root@r1# run show firewall
-
-Filter: __default_bpdu_filter__
-
-Filter: EDGE-BGP-PROTECTION
-Counters:
-Name                                                Bytes              Packets
-ELSE-REJECT                                           192                    3 <<< !
-PEER-ONLY                                           22630                  365 
 ```
 
 As observed this is fairly straightforward. Let's say R1 now needs to peer with 50 more routers a new router within that same BGP group. This clearly become cumbersome, since we would need to add new IP addresses per BGP peer we configure. This is prone to configuration error and/or forgetting to add the new peer IP's under the prefix-list leaving the edge interface unprotected. This where apply-path feature comes into play.
