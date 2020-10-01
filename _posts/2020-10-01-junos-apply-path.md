@@ -124,9 +124,9 @@ root@r1# show policy-options prefix-list BGP-PEER | display inheritance
 ##
 ## apply-path was expanded to:
 ##     10.1.2.2/32;
-##     10.1.2.3/32; << ! New prefix added
+##     10.1.2.3/32; << ! New prefix added automatically.
 ##
 apply-path "protocols bgp group <*> neighbor <*>";
 ```
 
-Beyond BGP, we can use it for other protocols such as RADIUS, TACACS, NTP, etc.
+Beyond BGP we can use it to control protocol source IP addresses that connect to the Routing Engine (RE) such as TACACS, NTP, or SNMP by only allowing traffic from the IP addresses that are actually configured in the router.
