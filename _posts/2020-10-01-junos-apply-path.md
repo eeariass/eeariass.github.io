@@ -4,10 +4,10 @@ title: Understanding junos apply-path feature
 slug: junos-apply-path.md
 ---
 
-`apply-path` feature allows for secure and simplified configuration parsing of [mostly] IP addresses in the Junos software.
+Junos apply-path feature allows for secure and simplified configuration parsing of [mostly] IP addresses in the Junos software.
 
 How it works? A matching condition is created under a particular hierarchy, based on this junos is able to get the values (mostly IP addresses) to be expanded based on the current configuration.
-### Scenario 1: Enhancing BGP security with `apply-path`
+### Scenario 1: Enhancing BGP security with apply-path
 In this network we have setup pair of router connected via eBGP, due to security reasons we need to apply a `firewall filter` to reject connections from source IP addresses other than those configured within the BGP group in R1 to avoid any external malicious source from attempting to connect to our edge router R1.
 
 #### Image 1 - my $bgp_peers topology
@@ -49,13 +49,13 @@ family inet {
     }
 }
 ```
-As observed this is fairly straightforward. Let's say R1 now needs to peer with 50 more routers a new router within that same BGP group. This clearly become cumbersome, since we would need to add new IP addresses per BGP peer we configure. This is prone to configuration error and/or forgetting to add the new peer IP's under the prefix-list leaving the edge interface unprotected.  This where `apply-path` feature comes into play.
+As observed this is fairly straightforward. Let's say R1 now needs to peer with 50 more routers a new router within that same BGP group. This clearly become cumbersome, since we would need to add new IP addresses per BGP peer we configure. This is prone to configuration error and/or forgetting to add the new peer IP's under the prefix-list leaving the edge interface unprotected.  This where apply-path feature comes into play.
 
-Instead of updating `prefix-lists` to match the BGP peer address, we create a *single* `apply-path` and inherit the peer IP address from the configuration automatically, this then is passed to `prefix-list` which will contain the list of peer IP's.
+Instead of updating `prefix-lists` to match the BGP peer address, we create a *single* apply-path and inherit the peer IP address from the configuration automatically, this then is passed to `prefix-list` which will contain the list of peer IP's.
 
-If we delete, add, rename IP's, the `apply-path` would be updated dynamically. 
+If we delete, add, rename IP's, the apply-path would be updated dynamically. 
 
-#### Example 2 - Allowing R1 BGP peer, rejecting everything else with `apply-path`
+#### Example 2 - Allowing R1 BGP peer, rejecting everything else with apply-path
 ```
 policy-options {
     prefix-list BGP-PEER {
