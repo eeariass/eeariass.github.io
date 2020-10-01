@@ -4,7 +4,7 @@ title: Understanding junos apply-path feature
 slug: junos-apply-path.md
 ---
 
-Junos apply-path feature allows for secure and simplified configuration parsing of IP addresses in the Junos software.
+Junos apply-path is a (really nice) feature that allows for secure and simplified configuration parsing of IP addresses within the Junos software.
 
 How it works? A matching condition is created under a particular hierarchy, based on this junos is able to get the values to be expanded based on the current configuration.
 ### Scenario 1: Enhancing BGP security with apply-path
