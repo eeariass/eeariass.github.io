@@ -93,7 +93,7 @@ root@r1# show policy-options prefix-list BGP-PEER | display inheritance
 apply-path "protocols bgp group <*> neighbor <*>";
 ```
 
-If we add a new BGP peer, the apply path would be updated automatically.
+If we add a new BGP peer in r1, the apply path would be updated automatically.
 
 ```
 [edit]
