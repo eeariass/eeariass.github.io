@@ -69,6 +69,8 @@ If we delete, add, rename IP's, the apply-path would be updated dynamically.
 
 #### Example 2 - Allowing R1 BGP peer, rejecting everything else with apply-path
 ```
+# R1 configuration:
+
 policy-options {
     prefix-list BGP-PEER {
         apply-path "protocols bgp group <*> neighbor <*>";
