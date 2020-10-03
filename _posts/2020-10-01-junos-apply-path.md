@@ -1,4 +1,11 @@
 ---
+<style type="text/css">
+.main-container {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
 layout: post
 title: Understanding Junos $apply-path feature
 slug: junos-apply-path.md
