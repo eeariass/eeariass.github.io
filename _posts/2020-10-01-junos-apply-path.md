@@ -32,7 +32,7 @@ set firewall family inet filter EDGE-BGP-PROTECTION term ELSE-REJECT then reject
 
 As observed this is fairly straightforward to configure, now r1 will only accept connections to TCP port 179 coming from r2. Now let's say r1 needs to peer with 50 more routers within that BGP group, this clearly becomes cumbersome since we would need to add new IP addresses per BGP peer we configure to the $prefix-list. This is prone error-prone and NetEng might forget to add the new peer IP addresses under the $prefix-list leaving the network unprotected.
 
-This where $apply-path feature comes into play: What if instead of manually updating our $prefix-list every time a new neighbor is added, we could somehow inherit the peer IP address from the configuration itself? Tthis is then passed to a $$prefix-list which will contain the list of peer IP addresses. If we add or delete any BGP peers from the configuration the $apply-path would be updated without NetEng intervention.
+This where $apply-path feature comes into play: What if instead of manually updating our $prefix-list every time a new neighbor is added, we could somehow inherit the peer IP address from the configuration itself? Tthis is then passed to a $prefix-list which will contain the list of peer IP addresses. If we add or delete any BGP peers from the configuration the $apply-path would be updated without NetEng intervention.
 
 #### Example 2 - Configuring junos $apply-path
 ```
