@@ -2,7 +2,6 @@
 layout: post
 title: Understanding Junos $apply-path feature
 slug: junos-apply-path.md
-width: 1000
 ---
 
 Junos $apply-path is a feature that allows for secure and simplified configuration parsing of IP addresses within the Junos software. How does it works? A matching condition is created under a particular hierarchy (protocols, interfaces, etc.), based on this junos is able to get the 'values' (IP addresses) to be expanded based on the current configuration.
