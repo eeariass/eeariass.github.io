@@ -2,6 +2,9 @@
 layout: post
 title: Understanding Junos $apply-path feature
 slug: junos-$apply-path.md
+image:
+  height: 1483
+  width: 746
 ---
 
 Junos $apply-path is a feature that allows for secure and simplified configuration parsing of IP addresses within the Junos software. How does it works? A matching condition is created under a particular hierarchy (protocols, interfaces, etc.), based on this junos is able to get the 'values' (IP addresses) to be expanded based on the current configuration.
@@ -10,8 +13,8 @@ Let's see an example of how we can use appy-path. In this network we have setup 
 
 #### Image 1 - my $bgp_peers topology
 ```
-    r1<----->r2
-    10.1.2.0/24
+        r1<------------->r2
+        .1 [10.1.2.0/24] .2
 ```
 
 The configuration to accomplish this is fairly simple, since we know the IP address of our peers, and we craft a *firewall filter* discarding TCP port 179 (BGP).
@@ -30,7 +33,9 @@ set firewall family inet filter EDGE-BGP-PROTECTION term ELSE-REJECT then count 
 set firewall family inet filter EDGE-BGP-PROTECTION term ELSE-REJECT then reject
 ```
 
-As observed this is fairly straightforward to configure, now r1 will only accept connections to TCP port 179 coming from r2. Now let's say r1 needs to peer with 50 more routers within that BGP group, this clearly becomes cumbersome since we would need to add new IP addresses per BGP peer we configure. This is obviously prone to errors and/or potentially forgetting to add the new peer IP's under the $$prefix-list leaving the network unprotected. This where $apply-path feature comes into play. Instead of updating $prefix-lists to match the BGP peer address every time a new peer is added, we create an $apply-path and inherit the peer IP address from the configuration automatically, this is then passed to a $$prefix-list which will contain the list of peer IP addresses. If we add or delete any BGP peers from the configuration the $apply-path would be updated without NetEng intervention.
+As observed this is fairly straightforward to configure, now r1 will only accept connections to TCP port 179 coming from r2. Now let's say r1 needs to peer with 50 more routers within that BGP group, this clearly becomes cumbersome since we would need to add new IP addresses per BGP peer we configure to the $prefix-list. This is prone error-prone and NetEng might forget to add the new peer IP addresses under the $prefix-list leaving the network unprotected.
+
+This where $apply-path feature comes into play: What if instead of manually updating our $prefix-list every time a new neighbor is added, we could somehow inherit the peer IP address from the configuration itself? Tthis is then passed to a $$prefix-list which will contain the list of peer IP addresses. If we add or delete any BGP peers from the configuration the $apply-path would be updated without NetEng intervention.
 
 #### Example 2 - Allowing r1 BGP peer, rejecting everything else with $apply-path
 ```
@@ -52,6 +57,7 @@ $apply-path "protocols bgp group <*> neighbor <*>";
 ```
 As we add new BGP peers in r1, the $apply-path would be automatically expanded with the new IP addresses from the neighbors.
 
+#### Example 4 - New configured peer IP dynamically added to the $prefix-list
 ```
 [edit]
 root@r1# show policy-options $prefix-list BGP-PEER | display inheritance
