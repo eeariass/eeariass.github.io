@@ -9,7 +9,7 @@ Junos $apply-path is a feature that allows for secure and simplified configurati
 Let's see an example of how we can use appy-path. In this network we have setup pair of router connected via BGP between r1 and r2, due to security reasons we need to apply a `firewall filter` to reject any connection attempts to BGP port 179 coming from sources other than our explicitly configured external peers, also for future growth, we need to update the $prefix-list every time a new peer is added to the BGP group.
 
 #### Image 1 - my $bgp_peers topology
-```
+```python
 r1<------------->r2
 .1 [10.1.2.0/24] .2
 ```
