@@ -2,11 +2,11 @@ title: elvin's resources
 email: eeariass@outlook.com
 description: elvin's thoughts
 github_username:  eeariass
-classes: wide
 permalink: /:slug.html
 
 favicon: "./router.jpg" # relative path to site's favicon
 goat_counter: "eeariass" # put your GoatCounter name if you want to use GoatCounter analytics
+classes: wide
 
 # Build settings
 remote_theme: riggraz/no-style-please
