@@ -4,20 +4,19 @@ title: Understanding junos apply-path feature
 slug: junos-apply-path.md
 ---
 
-Junos apply-path is a (really nice) feature that allows for secure and simplified configuration parsing of IP addresses within the Junos software.
+Junos apply-path is a feature that allows for secure and simplified configuration parsing of IP addresses within the Junos software. How does it works? A matching condition is created under a particular hierarchy (protocols, interfaces, etc.), based on this junos is able to get the 'values' (IP addresses) to be expanded based on the current configuration.
 
-How it works? A matching condition is created under a particular hierarchy, based on this junos is able to get the values to be expanded based on the current configuration.
 ### Scenario 1: Enhancing BGP security with apply-path
-In this network we have setup pair of router connected via eBGP, due to security reasons we need to apply a `firewall filter` to reject connections from source IP addresses other than those configured within the BGP group in r1 to avoid any external malicious source from attempting to connect to our edge router r1.
+In this network we have setup pair of router connected via BGP between r1 and r2, due to security reasons we need to apply a `firewall filter` to reject any connection attempts to BGP port 179 coming from sources other than our explicitly configured external peers.
 
 #### Image 1 - my $bgp_peers topology
 ```
 r1<|.1--------------.2|>r2
          10.1.2.0/24
 ```
-The configuration to accomplish this is fairly simple, since we know the IP address of our peer, we craft a `firewall filter` that allows port 179 from peer IP address.
+The configuration to accomplish this is fairly simple, since we know the IP address of our peers, we know we have to create a `firewall filter` that allows port 179 from peer IP address.
 
-#### Example 1 - Allowing r1 BGP peer, rejecting everything else with static prefix-list.
+#### Example 1 - Allowing r1 BGP peer, rejecting everything else with no appy-path.
 
 ```
 # r1 configuration:
@@ -52,7 +51,7 @@ family inet {
 }
 ```
 
-If a source IP address other than 10.1.2.2 attempts to connect to r1 via port 179 it would be discarded.
+If a source IP address other than 10.1.2.2 attempts to connect to r1 via port 179 it would be discarded as expected, see connection test below. 
 
 ```
 root@r2# run telnet 10.1.2.1 source 2.2.2.2 port 179
@@ -61,9 +60,9 @@ telnet: connect to address 10.1.2.1: Connection refused
 telnet: Unable to connect to remote host
 ```
 
-As observed this is fairly straightforward. Let's say r1 now needs to peer with 50 more routers a new router within that same BGP group. This clearly become cumbersome, since we would need to add new IP addresses per BGP peer we configure. This is prone to configuration error and/or forgetting to add the new peer IP's under the prefix-list leaving the edge interface unprotected. This where apply-path feature comes into play.
+As observed this is fairly straightforward to configure, but now let's say r1 needs to peer with 50 more routers within that BGP group, this clearly becomes cumbersome since we would need to add new IP addresses per BGP peer we configure. This is obviously prone to errors and/or potentially forgetting to add the new peer IP's under the prefix-list leaving the network unprotected. This where apply-path feature comes into play.
 
-Instead of updating `prefix-lists` to match the BGP peer address, we create a *single* apply-path and inherit the peer IP address from the configuration automatically, this then is passed to `prefix-list` which will contain the list of peer IP's.
+Instead of updating `prefix-lists` to match the BGP peer address every time a new peer is added, we create a *single* apply-path and inherit the peer IP address from the configuration automatically, this then is passed to `prefix-list` which will contain the list of peer IP's.
 
 If we delete, add, rename IP's, the apply-path would be updated dynamically. 
 
