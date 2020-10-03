@@ -4,7 +4,7 @@ title: Understanding Junos $apply-path feature
 slug: junos-$apply-path.md
 image:
   height: 1483
-  width: 746
+  width: 800
 ---
 
 Junos $apply-path is a feature that allows for secure and simplified configuration parsing of IP addresses within the Junos software. How does it works? A matching condition is created under a particular hierarchy (protocols, interfaces, etc.), based on this junos is able to get the 'values' (IP addresses) to be expanded based on the current configuration.
@@ -23,8 +23,8 @@ The configuration to accomplish this is fairly simple, since we know the IP addr
 ```
 /* r1 firewall filter configuration */
 
-set policy-options $prefix-list BGP-PEER 10.1.2.2/32
-set firewall family inet filter EDGE-BGP-PROTECTION term ALLOW-PEER-ONLY from source-$prefix-list BGP-PEER
+set policy-options prefix-list BGP-PEER 10.1.2.2/32
+set firewall family inet filter EDGE-BGP-PROTECTION term ALLOW-PEER-ONLY from source-prefix-list BGP-PEER
 set firewall family inet filter EDGE-BGP-PROTECTION term ALLOW-PEER-ONLY from protocol tcp
 set firewall family inet filter EDGE-BGP-PROTECTION term ALLOW-PEER-ONLY from destination-port bgp
 set firewall family inet filter EDGE-BGP-PROTECTION term ALLOW-PEER-ONLY then count PEER-ONLY
@@ -37,7 +37,7 @@ As observed this is fairly straightforward to configure, now r1 will only accept
 
 This where $apply-path feature comes into play: What if instead of manually updating our $prefix-list every time a new neighbor is added, we could somehow inherit the peer IP address from the configuration itself? Tthis is then passed to a $$prefix-list which will contain the list of peer IP addresses. If we add or delete any BGP peers from the configuration the $apply-path would be updated without NetEng intervention.
 
-#### Example 2 - Allowing r1 BGP peer, rejecting everything else with $apply-path
+#### Example 2 - Configuring junos $apply-path
 ```
 /* r1 $apply-path */
 
@@ -45,7 +45,7 @@ set policy-options prefix-list BGP-PEER apply-path "protocols bgp group <*> neig
 ```
 To verify what is the $apply-path expansion, we need to use the 'display inheritance' option when doing the config verification.
 
-#### Example 3 - Checking $prefix-list with $apply-path
+#### Example 3 - Expanding $prefix-list with $apply-path
 ```
 [edit]
 root@r1# show policy-options $prefix-list BGP-PEER | display inheritance
@@ -55,9 +55,9 @@ root@r1# show policy-options $prefix-list BGP-PEER | display inheritance
 ##
 $apply-path "protocols bgp group <*> neighbor <*>";
 ```
-As we add new BGP peers in r1, the $apply-path would be automatically expanded with the new IP addresses from the neighbors.
+As we add new BGP peers to r1's BGP group, the $apply-path would be automatically expanded with the new IP addresses from the neighbors.
 
-#### Example 4 - New configured peer IP dynamically added to the $prefix-list
+#### Example 4 - Peer IP dynamically added to the $prefix-list
 ```
 [edit]
 root@r1# show policy-options $prefix-list BGP-PEER | display inheritance
