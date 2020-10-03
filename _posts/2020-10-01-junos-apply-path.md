@@ -11,8 +11,8 @@ Let's see an example of how we can use appy-path. In this network we have setup 
 
 #### Image 1 - my $bgp_peers topology
 ```
-                r1<------------->r2
-                .1 [10.1.2.0/24] .2
+r1<------------->r2
+.1 [10.1.2.0/24] .2
 ```
 
 The configuration to accomplish this is fairly simple, since we know the IP address of our peers, and we craft a *firewall filter* discarding TCP port 179 (BGP).
