@@ -8,7 +8,7 @@ image:
   height: 1483
   width: 800
 ---
-[image](../assets/images/comics/001-stack-overflow-antipattern.png)
+![image](../assets/images/comics/001-stack-overflow-antipattern.png)
 Junos $apply-path is a feature that allows for secure and simplified configuration parsing of IP addresses within the Junos software. How does it works? A matching condition is created under a particular hierarchy (protocols, interfaces, etc.), based on this junos is able to get the 'values' (IP addresses) to be expanded based on the current configuration.
 
 Let's see an example of how we can use appy-path. In this network we have setup pair of router connected via BGP between r1 and r2, due to security reasons we need to apply a `firewall filter` to reject any connection attempts to BGP port 179 coming from sources other than our explicitly configured external peers, also for future growth, we need to update the $prefix-list every time a new peer is added to the BGP group.
