@@ -56,7 +56,6 @@ root@r1# show policy-options $prefix-list BGP-PEER | display inheritance
 $apply-path "protocols bgp group <*> neighbor <*>";
 ```
 As we add new BGP peers to r1's BGP group, the $apply-path would be automatically expanded with the new IP addresses from the neighbors.
-
 #### Example 4 - Peer IP dynamically added to the $prefix-list
 ```
 [edit]
@@ -64,9 +63,9 @@ root@r1# show policy-options $prefix-list BGP-PEER | display inheritance
 ##
 ## $apply-path was expanded to:
 ##     10.1.2.2/32;
-##     10.1.2.3/32; << ! New prefix added automatically.
+##     10.1.2.3/32; << ! New prefix added automatically to the $prefix-list.
 ##
-$apply-path "protocols bgp group <*> neighbor <*>";
+apply-path "protocols bgp group <*> neighbor <*>";
 ```
 
 Finally as an additional note, beyond BGP, we can use $apply-path under NTP, RADIUS, TACACS, or any other arbitrary hierarchy ($system, $interfaces, $protocols) for the purpose of automatic address expansion within the junos configuration.
