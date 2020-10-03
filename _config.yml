@@ -2,7 +2,7 @@ title: elvin's resources
 email: eeariass@outlook.com
 description: elvin's thoughts
 github_username:  eeariass
-
+classes: wide
 permalink: /:slug.html
 
 favicon: "./router.jpg" # relative path to site's favicon
