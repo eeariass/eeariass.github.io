@@ -17,7 +17,7 @@ r1<------------->r2
 The configuration to accomplish this is fairly simple, since we know the IP address of our peers, and we craft a *firewall filter* discarding TCP port 179 (BGP).
 
 #### Example 1 - Allowing r1 BGP peer, rejecting everything else with no appy-path.
-```
+```python
 /* r1 firewall filter configuration */
 
 set policy-options prefix-list BGP-PEER 10.1.2.2/32
@@ -35,7 +35,7 @@ As observed this is fairly straightforward to configure, now r1 will only accept
 This where $apply-path feature comes into play: What if instead of manually updating our $prefix-list every time a new neighbor is added, we could somehow inherit the peer IP address from the configuration itself? Tthis is then passed to a $prefix-list which will contain the list of peer IP addresses. If we add or delete any BGP peers from the configuration the $apply-path would be updated without NetEng intervention.
 
 #### Example 2 - Configuring junos $apply-path
-```
+```python
 /* r1 $apply-path */
 
 set policy-options prefix-list BGP-PEER apply-path "protocols bgp group <*> neighbor <*>"
@@ -43,7 +43,7 @@ set policy-options prefix-list BGP-PEER apply-path "protocols bgp group <*> neig
 To verify what is the $apply-path expansion, we need to use the 'display inheritance' option when doing the config verification.
 
 #### Example 3 - Expanding $prefix-list with $apply-path
-```
+```python
 [edit]
 root@r1# show policy-options prefix-list BGP-PEER | display inheritance
 ##
@@ -54,7 +54,7 @@ $apply-path "protocols bgp group <*> neighbor <*>";
 ```
 As we add new BGP peers to r1's BGP group, the $apply-path would be automatically expanded with the new IP addresses from the neighbors.
 #### Example 4 - Peer IP dynamically added to the $prefix-list
-```
+```python
 [edit]
 root@r1# show policy-options prefix-list BGP-PEER | display inheritance
 ##
