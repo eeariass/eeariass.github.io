@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Understanding Junos $apply-path feature
+classes: wide
 slug: junos-$apply-path.md
 image:
   path: /assets/images/comics/001-line.png
