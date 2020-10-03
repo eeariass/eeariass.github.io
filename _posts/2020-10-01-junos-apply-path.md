@@ -1,12 +1,10 @@
 ---
 layout: post
 title: Understanding Junos $apply-path feature
-classes: wide
 slug: junos-$apply-path.md
 image:
   path: /assets/images/comics/001-line.png
-  height: 1483
-  width: 800
+  width: 743
 ---
 
 
