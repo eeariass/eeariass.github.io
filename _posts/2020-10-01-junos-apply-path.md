@@ -56,7 +56,7 @@ As we add new BGP peers to r1's BGP group, the $apply-path would be automaticall
 #### Example 4 - Peer IP dynamically added to the $prefix-list
 ```
 [edit]
-root@r1# show policy-options $prefix-list BGP-PEER | display inheritance
+root@r1# show policy-options prefix-list BGP-PEER | display inheritance
 ##
 ## $apply-path was expanded to:
 ##     10.1.2.2/32;
