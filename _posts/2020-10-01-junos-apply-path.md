@@ -46,7 +46,7 @@ To verify what is the $apply-path expansion, we need to use the 'display inherit
 #### Example 3 - Expanding $prefix-list with $apply-path
 ```
 [edit]
-root@r1# show policy-options $prefix-list BGP-PEER | display inheritance
+root@r1# show policy-options prefix-list BGP-PEER | display inheritance
 ##
 ## $apply-path was expanded to:
 ##     10.1.2.2/32;
