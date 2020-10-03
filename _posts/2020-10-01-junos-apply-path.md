@@ -3,7 +3,7 @@ layout: post
 title: Understanding Junos $apply-path feature
 slug: junos-$apply-path.md
 image:
-  path: /assets/images/comics/001-junos-logo.png
+  path: /assets/images/comics/line.png
   height: 1483
   width: 800
 ---
