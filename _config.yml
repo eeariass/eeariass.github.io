@@ -40,8 +40,8 @@ permalink: /:year/:month/:day/:title/
 # Includes an icon in the footer for each username you enter
 footer-links:
   email: eeariass@gmail.com
-  github: https://github.com/eeariass/
-  linkedin: https://www.linkedin.com/in/elvin-arias-23702881/
+  github: eeariass
+  linkedin: elvin-arias-23702881/
   rss: # just type anything here for a working RSS icon
   twitter: eeariass
 
