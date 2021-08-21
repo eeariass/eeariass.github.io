@@ -9,3 +9,5 @@ In the last couple of months, been really into Junos studying for learning purpo
 This has been my first experience in a certification program outside Cisco, ever, and it has been smooth, exam questions are based on real-world scenarios and well crafted.
 
 Will post new stuff here, in case I find something interesting during my JNCIE-SP studies.
+
+<img src=" https://images.credly.com/size/680x680/images/57dae551-be95-4d64-a29c-947aa1ff7090/L_03_prof_JNCIP-SP.png" />
