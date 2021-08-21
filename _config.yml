@@ -28,10 +28,10 @@ url:
 baseurl: ""
 
 # global author information
-author: andrew-park
+author: elvin
 
 # URL to a site-wide logo (e.g., /assets/your-company-logo.png)
-logo: /assets/images/bootstrap_logo.svg
+logo: ./router.jpg
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
