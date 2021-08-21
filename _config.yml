@@ -9,7 +9,8 @@ name: elvin's resources
 title: minimal-bootstrap-blog
 
 # Link to avatar in the navbar (/assets/images/avatar.png). Leave empty if no logo desired.
-avatar: /assets/images/bootstrap_logo.svg
+avatar: /assets/images/router.jpg
+favicon: "./router.jpg" # relative path to site's favicon
 
 # A short description (e.g., A blog dedicated to reviewing cat gifs), used as part of the title tag like Ben's Awesome Site | A blog dedicated to reviewing cat gifs instead of Ben's Awesome Site | Long description about a blog dedicated to reviewing cat gifs that would be used when page.title is not defined.
 tagline: minimal bootstrap theme for Jekyll blogs
