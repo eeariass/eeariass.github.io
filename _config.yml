@@ -3,7 +3,7 @@
 #
 
 # Name of your site (displayed in the navbar)
-name: minimal-bootstrap-blog
+name: elvin's resources
 
 # Your site's title (e.g., Ben's Awesome Site, The GitHub Blog, etc.), used as part of the title tag like Home | Ben's Awesome Site.
 title: minimal-bootstrap-blog
@@ -15,7 +15,7 @@ avatar: /assets/images/bootstrap_logo.svg
 tagline: minimal bootstrap theme for Jekyll blogs
 
 # A longer description used for the description meta tag. Also used as fallback for pages that don't provide their own description, and also as part of the page's title tag if neither page.title nor site.tagline has been defined.
-description: minimal bootstrap theme for Jekyll blogs
+description: elvin's thoughts
 
 # The full URL to your site. Note: site.github.url will be used by default.
 url:
@@ -39,13 +39,11 @@ permalink: /:year/:month/:day/:title/
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  email: mkie0125@gmail.com
-  facebook:
-  github: andrewhwanpark/minimal-bootstrap-blog
-  instagram: andrewhwanpark
-  linkedin: andrewhwanpark
+  email: eeariass@gmail.com
+  github: https://github.com/eeariass/
+  linkedin: https://www.linkedin.com/in/elvin-arias-23702881/
   rss: # just type anything here for a working RSS icon
-  twitter: andrewhwanpark
+  twitter: eeariass
 
 plugins:
   - jekyll-seo-tag
