@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+My name is $elvin, and I am a network engineer, like to share some writtings I do here and there on Cisco, Juniper, and whatever I find interesting;
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[email](mailto:eeariassl@gmail.com)
+[twitter](twitter.com/eeariass)
+[linkedin](https://www.linkedin.com/in/elvin-arias-23702881)
