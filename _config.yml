@@ -9,8 +9,8 @@ github_username: eeariass
 title: elvin's thoughts
 
 # Link to avatar in the navbar (/assets/images/avatar.png). Leave empty if no logo desired.
-avatar: "./router.jpg"
-favicon: "./router.jpg" # relative path to site's favicon
+avatar: /assets/images/router.jpg
+favicon: /assets/images/router.jpg # relative path to site's favicon
 
 # A short description (e.g., A blog dedicated to reviewing cat gifs), used as part of the title tag like Ben's Awesome Site | A blog dedicated to reviewing cat gifs instead of Ben's Awesome Site | Long description about a blog dedicated to reviewing cat gifs that would be used when page.title is not defined.
 tagline: elvin's thoughts
@@ -31,7 +31,7 @@ baseurl: ""
 author: elvin
 
 # URL to a site-wide logo (e.g., /assets/your-company-logo.png)
-logo: "./router.jpg"
+logo: /assets/images/router.jpg
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
