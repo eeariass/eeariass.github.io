@@ -6,7 +6,7 @@ slug: quick-ios-xr-tips-bgp-best-path-reason
 
 Short tip, in case you want to quickly know the reason why an IP prefix has been selected in BGP, you can use the `best-compare` keyword when querying the prefix.
 
-```Python
+```python
 XR1#show bgp ipv4 unicast 8.8.8.0/24 bestpath-compare
 Paths: (2 available, best #2)
   Advertised to peers (in unique update groups):
