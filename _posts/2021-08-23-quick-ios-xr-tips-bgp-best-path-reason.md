@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Qick tip: Checking the BGP best path reason in IOS-XR 
-slug: quick-ios-xr-tips-bgp-best-path-reason.md
+slug: quick-ios-xr-tips-bgp-best-path-reason
 ---
 
 Short tip, in case you want to quickly know the reason why an IP prefix has been selected in BGP, you can use the `best-compare` keyword when querying the prefix.
