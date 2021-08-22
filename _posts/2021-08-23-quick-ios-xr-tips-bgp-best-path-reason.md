@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Quick tips: Checking the BGP best path reason in IOS-XR 
+title: Qick tip: Checking the BGP best path reason in IOS-XR 
 slug: quick-ios-xr-tips-bgp-best-path-reason.md
 ---
 
@@ -17,11 +17,11 @@ Paths: (2 available, best #2)
       Received Path ID 0, Local Path ID 0, version 0
       Origin-AS validity: not-found
       best of AS 64513
-      Longer AS path than best path (path #2) << ! Reason for not being best
+      Longer AS path than best path (path #2) << !Reason for not being best
   Path #2: Received by speaker 0
   64666
     10.1.3.3 from 10.1.3.3 (3.3.3.3)
       Origin-AS validity: not-found
-      best of AS 64666, Overall best
+      best of AS 64666, Overall best << !
 ```
 As seen, the reason why the best path is path #2 is due to the fact that path #1 has a longer AS path.
