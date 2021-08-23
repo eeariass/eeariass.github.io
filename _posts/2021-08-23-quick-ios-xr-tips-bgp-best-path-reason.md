@@ -24,4 +24,4 @@ Paths: (2 available, best #2)
       Origin-AS validity: not-found
       best of AS 64666, Overall best << !
 ```
-As seen, the reason why the best path is path #2 is due to the fact that path #1 has a longer AS path.
+As seen, the reason why the best path is path #2 is due to the fact that path #1 has a longer AS path. This is a quick and convenient way to check reason why the prefix has been chosen, which could help in production networks and/or CCIE Service Provider lab.
