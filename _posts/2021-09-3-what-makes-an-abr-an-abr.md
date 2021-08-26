@@ -17,7 +17,7 @@ This has implications in scenarios where we need an ABR to generate Type-3/NetSu
 #### Scenario: Why my backbone does not have the route?
 
 #### Topology
-![abr-post](assets/abr-post.png)
+<img src="/assets/images/abr-post.png" alt="">
 
 #### Initial configuration
 
