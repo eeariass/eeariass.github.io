@@ -9,8 +9,8 @@ Recently while navigating through the [Juniper Elevate](https://community.junipe
 What makes an ABR an ABR in OSPF? This is a question that may seem straightforward for many, but surprisingly the answer depends of whom you ask, and you will get a different answer whether you’re asking it to a Cisco or a Juniper engineer. The single most accurate answer would always be: “An ABR is a router which Router LSA has the Border bit set”. Obviously this does not tell us the full picture.
 
 IOS and Junos take of when to set the Border bit is different:
-- a. A Cisco engineer would say that an ABR is a router between area 0 and any other area.
-- b. Someone in the Junos would world would say that an ABR is a router that is attached to two or more areas.
+- A Cisco engineer would say that an ABR is a router between area 0 and any other area.
+- Someone in the Junos would world would say that an ABR is a router that is attached to two or more areas.
 
 This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA). We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the behaviour of Junos in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
 
