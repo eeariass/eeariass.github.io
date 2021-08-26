@@ -146,13 +146,10 @@ inet.0: 16 destinations, 16 routes (16 active, 0 holddown, 0 hidden)
 vMX2 and vMX3 should translate this LSA on their respective areas from Type-7 to Type-5 (should they?), but while checking the route table and LSDB we see the route is no found nor the LSA coming from the ABRs.
 
 ```perl
-[edit]
 jcluser@vMX1# run show route table inet.0 4.4.4.4/32
-
-[edit]
+<no output>
 jcluser@vMX1# run show ospf database external lsa-id 4.4.4.4
-
-[edit]
+<no output>
 ```
 
 The issue is quite clear, vMX4 is competing for the election of the NSSA translator, since it consider itself as an ABR and it has the highest router-ID it wins the election and vMX2 and vMX3 don’t see the route coming from the NSSA.
@@ -162,7 +159,6 @@ We can fix this by setting the router-ID in vMX4 to be lower than vMX2 and vMX3.
 ```perl
 jcluser@vMX4# set routing-options router-id 1.1.1.4
 
-[edit]
 jcluser@vMX4# commit
 commit complete
 
