@@ -21,12 +21,11 @@ This has implications in scenarios where we need an ABR to generate Type-3/NetSu
 ### Initial configuration
 
 vMX1
-```python
+```perl
 jcluser@vMX1# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.12.1/24
 set interfaces ge-0/0/1 unit 0 family inet address 10.100.14.1/24
 set interfaces ge-0/0/2 unit 0 family inet address 10.100.13.1/24
-set interfaces fxp0 unit 0 family inet address 100.123.1.0/16
 set interfaces lo0 unit 0 family inet address 1.1.1.1/32
 set protocols ospf area 0.0.0.0 interface lo0.0
 set protocols ospf area 0.0.0.0 interface ge-0/0/0.0
@@ -34,12 +33,11 @@ set protocols ospf area 0.0.0.0 interface ge-0/0/2.0
 ```
 
 vMX2
-```python
+```perl
 jcluser@vMX2# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.12.2/24
 set interfaces ge-0/0/1 unit 0 family inet address 10.100.23.1/24
 set interfaces ge-0/0/2 unit 0 family inet address 10.100.24.1/24
-set interfaces fxp0 unit 0 family inet address 100.123.1.1/16
 set interfaces lo0 unit 0 family inet address 2.2.2.2/32
 set protocols ospf area 0.0.0.24 nssa
 set protocols ospf area 0.0.0.24 interface ge-0/0/2.0
@@ -48,12 +46,11 @@ set protocols ospf area 0.0.0.0 interface lo0.0
 ```
 
 vMX3
-```python
+```perl
 jcluser@vMX3# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.34.1/24
 set interfaces ge-0/0/1 unit 0 family inet address 10.100.23.2/24
 set interfaces ge-0/0/2 unit 0 family inet address 10.100.13.2/24
-set interfaces fxp0 unit 0 family inet address 100.123.1.2/16
 set interfaces lo0 unit 0 family inet address 3.3.3.3/32
 set protocols ospf area 0.0.0.34 nssa
 set protocols ospf area 0.0.0.34 interface ge-0/0/0.0
@@ -61,7 +58,7 @@ set protocols ospf area 0.0.0.0 interface ge-0/0/2.0
 ```
 
 vMX4
-```python
+```perl
 jcluser@vMX4# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.34.2/24
 set interfaces ge-0/0/1 unit 0 family inet address 10.100.14.2/24
@@ -78,7 +75,7 @@ set protocols ospf export OSPF-REDIST
 
 We can observe that vMX4 is indicating it is an ABR, it is also an ASBR since we are redistributing its lo0.0 interface generating a Type-7/NSSA External LSA.
 
-```python
+```perl
 jcluser@vMX4# run show ospf overview
 Instance: master
   Router ID: 4.4.4.4
@@ -93,7 +90,7 @@ Instance: master
 
 Expanding the link-state database, we can observe that vMX4 is generating the NSSA External LSAs as we expect.
 
-```python
+```perl
 jcluser@vMX4# run show ospf database router lsa-id 4.4.4.4 extensive
 
     OSPF database, Area 0.0.0.24
@@ -127,7 +124,7 @@ Router  *4.4.4.4          4.4.4.4          0x80000004   391  0x20 0x8762  36
 
 vMX2 and vM3 is seeing this route towards vMX4 in the route table.
 
-```python
+```perl
 jcluser@vMX2# run show route table inet.0 4.4.4.4/32
 
 inet.0: 15 destinations, 15 routes (15 active, 0 holddown, 0 hidden)
@@ -147,7 +144,7 @@ inet.0: 16 destinations, 16 routes (16 active, 0 holddown, 0 hidden)
 
 vMX2 and vMX3 should translate this LSA on their respective areas from Type-7 to Type-5 (should they?), but while checking the route table and LSDB we see the route is no found nor the LSA coming from the ABRs.
 
-```python
+```perl
 [edit]
 jcluser@vMX1# run show route table inet.0 4.4.4.4/32
 
@@ -161,7 +158,7 @@ The issue is quite clear, vMX4 is competing for the election of the NSSA transla
 
 We can fix this by setting the router-ID in vMX4 to be lower than vMX2 and vMX3.
 
-```python
+```perl
 jcluser@vMX4# set routing-options router-id 1.1.1.4
 
 [edit]
@@ -176,7 +173,7 @@ Instance: master
 
 If we verify vMX1, we will see Type-5/External LSA coming from the ABRs and the route installed in the route table.
 
-```python
+```perl
 /LSA
 
 jcluser@vMX1# run show ospf database external lsa-id 4.4.4.4 extensive
@@ -211,7 +208,7 @@ inet.0: 15 destinations, 15 routes (15 active, 0 holddown, 0 hidden)
 
 We can ping!
 
-```python
+```perl
 jcluser@vMX1# run ping 4.4.4.4 rapid
 PING 4.4.4.4 (4.4.4.4): 56 data bytes
 !!!!!
