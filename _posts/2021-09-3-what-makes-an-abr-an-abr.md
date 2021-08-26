@@ -12,7 +12,7 @@ IOS and Junos take of when to set the Border bit is different:
 - A Cisco engineer would say that an ABR is a router between area 0 and any other area.
 - Someone in the Junos would world would say that an ABR is a router that is attached to two or more areas.
 
-This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA). We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the behaviour of Junos in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
+This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA) to determine which router would be elected as the Type-7-to-Type-5 LSA translator. We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the behaviour of Junos in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
 
 #### Scenario: Why my backbone does not have the route?
 In this scenario we have vMX1 as an internal backbone router. vMX2 and vMX3 are ABRs connected to vMX4 with the areas set as NSSAs, while vMX4 is redistributing its connected lo0.0 with the policy referenced below `OSPF-REDIST`.
@@ -71,13 +71,13 @@ set protocols ospf area 0.0.0.34 nssa
 set protocols ospf area 0.0.0.34 interface ge-0/0/0.0
 set protocols ospf export OSPF-REDIST
 ```
-We can observe that vMX4 is indicating it is an ABR, it is also an ASBR since we are redistributing its lo0.0 interface generating a Type-7/NSSA External LSA.
+We can observe that vMX4 is indicating it is an ABR even though is not connected to area 0, it is also an ASBR since we are redistributing its lo0.0 interface generating a Type-7/NSSA External LSA.
 
 ```perl
 jcluser@vMX4# run show ospf overview
 Instance: master
   Router ID: 4.4.4.4
-  Area border router, AS boundary router, NSSA router
+  Area border router, AS boundary router, NSSA router <<< !
   Area: 0.0.0.24
     Stub type: Stub NSSA
     Area border routers: 1, AS boundary routers: 1
@@ -86,7 +86,7 @@ Instance: master
     Area border routers: 1, AS boundary routers: 1
 ```
 
-Expanding the link-state database, we can observe that vMX4 is generating the NSSA External LSAs as we expect.
+Expanding the link-state database, we can observe that vMX4 is generating the NSSA External LSAs as we expect. Note the `bits 0x3` field in the Router LSA header, this corresponds to the ABR and ASBR bits being set, this is how the router via the Router LSA signals to the area that it is an ABR/ASBR for the NSSA.
 
 ```perl
 jcluser@vMX4# run show ospf database router lsa-id 4.4.4.4 extensive
