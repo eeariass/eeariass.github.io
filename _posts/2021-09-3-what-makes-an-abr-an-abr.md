@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What makes an `ABR` an `ABR`? 
+title: What makes an ABR an ABR? 
 slug: what-makes-an-ABR-an-ABR
 ---
 
