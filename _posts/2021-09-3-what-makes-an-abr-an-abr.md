@@ -23,7 +23,6 @@ In this scenario we have vMX1 as an internal backbone router. vMX2 and vMX3 are 
 vMX1:
 jcluser@vMX1# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.12.1/24
-set interfaces ge-0/0/1 unit 0 family inet address 10.100.14.1/24
 set interfaces ge-0/0/2 unit 0 family inet address 10.100.13.1/24
 set interfaces lo0 unit 0 family inet address 1.1.1.1/32
 set protocols ospf area 0.0.0.0 interface lo0.0
@@ -35,7 +34,6 @@ set protocols ospf area 0.0.0.0 interface ge-0/0/2.0
 vMX2:
 jcluser@vMX2# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.12.2/24
-set interfaces ge-0/0/1 unit 0 family inet address 10.100.23.1/24
 set interfaces ge-0/0/2 unit 0 family inet address 10.100.24.1/24
 set interfaces lo0 unit 0 family inet address 2.2.2.2/32
 set protocols ospf area 0.0.0.24 nssa
@@ -48,7 +46,6 @@ set protocols ospf area 0.0.0.0 interface lo0.0
 vMX3:
 jcluser@vMX3# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.34.1/24
-set interfaces ge-0/0/1 unit 0 family inet address 10.100.23.2/24
 set interfaces ge-0/0/2 unit 0 family inet address 10.100.13.2/24
 set interfaces lo0 unit 0 family inet address 3.3.3.3/32
 set protocols ospf area 0.0.0.34 nssa
@@ -60,7 +57,6 @@ set protocols ospf area 0.0.0.0 interface ge-0/0/2.0
 vMX4:
 jcluser@vMX4# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.34.2/24
-set interfaces ge-0/0/1 unit 0 family inet address 10.100.14.2/24
 set interfaces ge-0/0/2 unit 0 family inet address 10.100.24.2/24
 set interfaces lo0 unit 0 family inet address 4.4.4.4/32
 set policy-options policy-statement OSPF-REDIST term LOOPBACK from interface lo0.0
