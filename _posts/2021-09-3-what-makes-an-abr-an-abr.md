@@ -157,7 +157,7 @@ jcluser@vMX1# run show ospf database external lsa-id 4.4.4.4
 [edit]
 ```
 
-The issue is quite clear. vMX4 is competing for the election of the NSSA translator, since it consider itself as an ABR and it has the highest router-ID it wins the election and vMX2 and vMX3 don’t see the route coming from the NSSA.
+The issue is quite clear, vMX4 is competing for the election of the NSSA translator, since it consider itself as an ABR and it has the highest router-ID it wins the election and vMX2 and vMX3 don’t see the route coming from the NSSA.
 
 We can fix this by setting the router-ID in vMX4 to be lower than vMX2 and vMX3.
 
