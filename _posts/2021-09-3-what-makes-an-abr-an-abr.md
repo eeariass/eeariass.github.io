@@ -14,11 +14,12 @@ IOS and Junos take of when to set the Border bit is different:
 
 This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA). We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the behaviour of Junos in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
 
-### Scenario: Why my backbone does not have the route?
+#### Scenario: Why my backbone does not have the route?
 
-### Topology
+#### Topology
+![abr-post](assets/abr-post.png)
 
-### Initial configuration
+#### Initial configuration
 
 vMX1
 ```perl
