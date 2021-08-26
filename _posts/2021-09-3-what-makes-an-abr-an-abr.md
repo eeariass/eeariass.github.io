@@ -6,13 +6,13 @@ slug: what-makes-an-ABR-an-ABR
 
 Recently while navigating through the [Juniper Elevate](https://community.juniper.net) community I saw a [question](https://community.juniper.net/answers/communities/community-home/digestviewer/viewthread?GroupId=25&MessageKey=01b7b661-02fc-492d-8d4b-d5d3e7c99e4d&CommunityKey=18c17e96-c010-4653-84e4-f21341a8f208&tab=digestviewer&ReturnUrl=%2fbrowse%2fallrecentposts) that caught my interest around OSPF. After observing the behaviour I thought it would be good to create a blog on it since this is one of those minor implementation details between vendors that can have significant impact in reachability in certain scenarios, and in this blog we will explore this in sufficient detail.
 
-What makes an ABR an ABR in OSPF? This is a question that may seem straightforward for many, but surprisingly the answer depends of whom you ask, and you will get a different answer whether you’re asking it to a Cisco or a Juniper engineer. The single most accurate answer would always be: “An ABR is a router which Router LSA has the Border bit set”. Obviously this does not tell us the full picture.
+What makes an ABR an ABR in OSPF? This is a question that may seem straightforward for many, but surprisingly the answer depends of whom you ask, and you will get a different answer whether you’re asking it to a Cisco or a Juniper engineer. The single most accurate answer would always be: “An ABR is a router which Router LSA has the Border bit set”, while this is correct this does not tell us the full picture.
 
-IOS and Junos take of when to set the Border bit is different:
-- A `Cisco` engineer would say that an ABR is a router that is attached between area 0 and any other area.
-- A `Juniper` engineer would say that an ABR is a router that is attached to two or more areas.
+IOS and Junos take a different approach when deciding when to set the Border bit:
+- `IOS` would set the border bit when a router is attached area 0 and any other area.
+- `Junos` would set the border bit when a router is attached to two or more areas.
 
-This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA) to determine which router would be elected as the Type-7-to-Type-5 LSA translator. We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the behaviour of Junos in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
+As seen, there is no strict requirement in Junos to be connected to area 0 in order for a router consider itself to be an ABR. This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA) to determine which router would be elected as the Type-7-to-Type-5 LSA translator. We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the behaviour of Junos in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
 
 #### Scenario: Why `vMX1` backbone router does not have the `4.4.4.4/32` route?
 In this scenario we have vMX1 as an internal backbone router. vMX2 and vMX3 are ABRs connected to vMX4 with the areas set as NSSAs, while vMX4 is redistributing its connected lo0.0 with the policy referenced below `OSPF-REDIST`.
