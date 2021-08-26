@@ -15,14 +15,12 @@ IOS and Junos take of when to set the Border bit is different:
 This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA). We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the behaviour of Junos in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
 
 #### Scenario: Why my backbone does not have the route?
-
-#### Topology
+In this scenario we have vMX1 as an internal backbone router. vMX2 and vMX3 are ABRs connected to vMX4 with the areas set as NSSAs, while vMX4 is redistributing its connected lo0.0 with the policy referenced below `OSPF-REDIST`.
 <img src="/assets/images/abr-post.png" alt="">
 
 #### Initial configuration
-
-vMX1
 ```perl
+vMX1:
 jcluser@vMX1# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.12.1/24
 set interfaces ge-0/0/1 unit 0 family inet address 10.100.14.1/24
@@ -31,10 +29,10 @@ set interfaces lo0 unit 0 family inet address 1.1.1.1/32
 set protocols ospf area 0.0.0.0 interface lo0.0
 set protocols ospf area 0.0.0.0 interface ge-0/0/0.0
 set protocols ospf area 0.0.0.0 interface ge-0/0/2.0
-```
 
-vMX2
-```perl
+/
+
+vMX2:
 jcluser@vMX2# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.12.2/24
 set interfaces ge-0/0/1 unit 0 family inet address 10.100.23.1/24
@@ -44,10 +42,10 @@ set protocols ospf area 0.0.0.24 nssa
 set protocols ospf area 0.0.0.24 interface ge-0/0/2.0
 set protocols ospf area 0.0.0.0 interface ge-0/0/0.0
 set protocols ospf area 0.0.0.0 interface lo0.0
-```
 
-vMX3
-```perl
+/
+
+vMX3:
 jcluser@vMX3# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.34.1/24
 set interfaces ge-0/0/1 unit 0 family inet address 10.100.23.2/24
@@ -56,10 +54,10 @@ set interfaces lo0 unit 0 family inet address 3.3.3.3/32
 set protocols ospf area 0.0.0.34 nssa
 set protocols ospf area 0.0.0.34 interface ge-0/0/0.0
 set protocols ospf area 0.0.0.0 interface ge-0/0/2.0
-```
 
-vMX4
-```perl
+/
+
+vMX4:
 jcluser@vMX4# show | match “ospf|interface” | display set
 set interfaces ge-0/0/0 unit 0 family inet address 10.100.34.2/24
 set interfaces ge-0/0/1 unit 0 family inet address 10.100.14.2/24
@@ -73,7 +71,6 @@ set protocols ospf area 0.0.0.34 nssa
 set protocols ospf area 0.0.0.34 interface ge-0/0/0.0
 set protocols ospf export OSPF-REDIST
 ```
-
 We can observe that vMX4 is indicating it is an ABR, it is also an ASBR since we are redistributing its lo0.0 interface generating a Type-7/NSSA External LSA.
 
 ```perl
