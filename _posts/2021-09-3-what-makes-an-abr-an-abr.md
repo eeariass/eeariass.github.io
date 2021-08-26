@@ -15,7 +15,7 @@ IOS and Junos take a different approach when deciding when to set the Border bit
 As seen, there is no strict requirement in Junos to be connected to area 0 in order for a router consider itself to be an ABR. This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA) to determine which router would be elected as the Type-7-to-Type-5 LSA translator. We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the behaviour of Junos in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
 
 #### Scenario: Why `vMX1` backbone router does not have the `4.4.4.4/32` route?
-In this scenario we have vMX1 as an internal backbone router. vMX2 and vMX3 are ABRs connected to vMX4 with the areas set as NSSAs, while vMX4 is redistributing its connected lo0.0 with the policy referenced below `OSPF-REDIST`.
+In this scenario we have vMX1 as an internal backbone router. vMX2 and vMX3 are ABRs connected to vMX4 with the areas set as NSSAs, while vMX4 is redistributing its connected `lo0.0` with the policy referenced below `OSPF-REDIST`.
 <img src="/assets/images/abr-post.png" alt="">
 
 #### Initial configuration
