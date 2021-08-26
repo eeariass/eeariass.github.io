@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What makes an ABR an ABR? 
+title: What makes an `ABR` an `ABR`? 
 slug: what-makes-an-ABR-an-ABR
 ---
 
@@ -86,7 +86,7 @@ Instance: master
     Area border routers: 1, AS boundary routers: 1
 ```
 
-Expanding the link-state database, we can observe that vMX4 is generating the NSSA External LSAs as we expect. Note the `bits 0x3` field in the Router LSA header, this corresponds to the ABR and ASBR bits being set, this is how the router via the Router LSA signals to the area that it is an ABR/ASBR for the NSSA.
+Expanding the link-state database, we can observe that vMX4 is generating the NSSA External LSA for prefix `4.4.4.4/32` as we expect. Note the `bits 0x3` field in the Router LSA header, this corresponds to the ABR and ASBR bits being set, this is how the router via the Router LSA signals to the area that it is an ABR/ASBR for the NSSA.
 
 ```perl
 jcluser@vMX4# run show ospf database router lsa-id 4.4.4.4 extensive
@@ -188,7 +188,7 @@ Extern   4.4.4.4          3.3.3.3          0x80000001    74  0x22 0xe81b  36
   Installed 00:01:13 ago, expires in 00:58:46, sent 00:01:13 ago
   Last changed 00:01:13 ago, Change count: 1
 
-/Route table
+/route table
 
 jcluser@vMX1# run show route table inet.0 4.4.4.4/32
 
