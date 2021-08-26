@@ -14,7 +14,7 @@ IOS and Junos take of when to set the Border bit is different:
 
 This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA) to determine which router would be elected as the Type-7-to-Type-5 LSA translator. We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the behaviour of Junos in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
 
-#### Scenario: Why my backbone does not have the route?
+#### Scenario: Why `vMX1` backbone router does not have the `4.4.4.4/32` route?
 In this scenario we have vMX1 as an internal backbone router. vMX2 and vMX3 are ABRs connected to vMX4 with the areas set as NSSAs, while vMX4 is redistributing its connected lo0.0 with the policy referenced below `OSPF-REDIST`.
 <img src="/assets/images/abr-post.png" alt="">
 
@@ -145,8 +145,7 @@ jcluser@vMX1# run show ospf database external lsa-id 4.4.4.4
 <no output>
 ```
 
-The issue is quite clear, vMX4 is competing for the election of the NSSA translator, since it consider itself as an ABR and it has the highest router-ID it wins the election and vMX2 and vMX3 don’t see the route coming from the NSSA.
-
+The issue is quite clear, vMX4 is competing for the election of the NSSA translator, since it consider itself as an ABR and it has the highest router-ID it wins the election, effectively disallowing vMX2 and vMX3 from translating Type-7 to Type-5 LSAs. Note that this is a behavior we would never see in `IOS`, since as mentioned earlier `IOS` will only set the Border bit when a router is attached between area 0 and any other area. 
 We can fix this by setting the router-ID in vMX4 to be lower than vMX2 and vMX3.
 
 ```perl
