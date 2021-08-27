@@ -14,6 +14,7 @@ As seen, there is no strict requirement in Junos to be connected to area 0 in or
 
 #### Scenario: Why `vMX1` backbone router does not have the `4.4.4.4/32` route?
 In this scenario we have vMX1 as an internal backbone router. vMX2 and vMX3 are ABRs connected to vMX4 with the areas set as NSSAs, while vMX4 is redistributing its connected `lo0.0` `4.4.4.4/32` with the policy referenced below `OSPF-REDIST`.
+
 <img src="/assets/images/abr-post.png" alt="">
 
 #### Initial configuration
