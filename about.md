@@ -4,4 +4,8 @@ title: About
 permalink: /about/
 ---
 
-My name is `$elvin`, and I am a network engineer, like to share some writtings I do here and there on Cisco, Juniper, and whatever I find interesting;
+my $name = `elvin`; and I am a network engineer. 
+
+I will use this space to share some things I find interesting and/or put notes on things I am studying around networking. 
+
+If there is something technically wrong or that lacks context/accuracy, please reach out, my contact info is at the bottom of this page.
