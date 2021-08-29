@@ -53,6 +53,7 @@ set routing-options router-id 3.3.3.3
 set protocols ospf area 0.0.0.34 nssa
 set protocols ospf area 0.0.0.34 interface ge-0/0/0.0
 set protocols ospf area 0.0.0.0 interface ge-0/0/2.0
+set protocols ospf area 0.0.0.0 interface lo0.0
 
 /
 
