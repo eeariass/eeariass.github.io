@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Junos vs. IOS: Implications of setting the `Border` bit in NSSA" 
+title: "Junos vs. IOS: Implications of setting the Border bit in NSSA" 
 slug: implications-of-border-bit-in-nssa
 ---
 
