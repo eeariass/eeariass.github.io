@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Junos vs. IOS: How ABR is defined and implications of the border bit in NSSAs" 
+title: "Junos vs. IOS: How the ABR is defined and implications of the border bit in NSSAs" 
 slug: implications-of-border-bit-in-nssa
 ---
 
