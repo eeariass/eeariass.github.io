@@ -10,13 +10,11 @@ What makes an ABR an ABR in OSPF? This is a question that may seem straightforwa
 - `IOS` would set the border bit when a router is attached to area 0 and any other area.
 - `Junos` would set the border bit when a router is attached to two or more areas.
 
-Note that as per the [Juniper documentation](), they comply to the same theoretical definition of an ABR, but do not comply in practice while choosing when to set the Border bit, which ultimately flags a router as an ABR. The documentation says: 
+Note that as per the [Juniper documentation](https://www.juniper.net/documentation/us/en/software/junos/ospf/topics/topic-map/configuring-ospf-areas.html#id-understanding-ospf-areas__d161e42), they follow the same theoretical definition of an ABR as Cisco, but do not comply in practice while choosing when to set the Border bit, which ultimately flags a router as an ABR regardless of being attached to area 0 or not if connected to more than one area. The documentation says: 
 
-```
-Routing devices that belong to more than one area and connect one or more OSPF areas to the backbone area are called area border routers (ABRs). At least one interface is within the backbone while another interface is in another area. ABRs also maintain a separate topological database for each area to which they are connected.
-```
+“Routing devices that belong to more than one area and connect one or more OSPF areas to the backbone area are called area border routers (ABRs). At least one interface is within the backbone while another interface is in another area. ABRs also maintain a separate topological database for each area to which they are connected.”
 
-As seen, there is no strict requirement in Junos to be connected to area 0 in order for a router consider itself to be an ABR. This has implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA) to determine which router would be elected as the Type-7-to-Type-5 LSA translator. We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the Junos behaviour in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
+This have considerable implications in scenarios where we need an ABR to generate Type-3/NetSummary LSAs or when dealing with more advanced scenarios in Not-So-Stubby-Areas (NSSA) to determine which router would be elected as the Type-7-to-Type-5 LSA translator. We will explore an scenario that is interesting around the latter and that will be a good exercise for those who are from the Cisco world to observe the Junos behaviour in action, for those who are in the Junos world, stay around, since it might be something you might not expect. : )
 
 #### Scenario: Why `vMX1` backbone router does not have the `4.4.4.4/32` route?
 In this scenario we have vMX1 as an internal backbone router. vMX2 and vMX3 are ABRs connected to vMX4 with the areas set as NSSAs, while vMX4 is redistributing its connected `lo0.0` `4.4.4.4/32` with the policy referenced below `OSPF-REDIST`.
@@ -77,7 +75,8 @@ set protocols ospf area 0.0.0.34 nssa
 set protocols ospf area 0.0.0.34 interface ge-0/0/0.0
 set protocols ospf export OSPF-REDIST
 ```
-We can observe that vMX4 is indicating it is an ABR even though is not connected to area 0, it is also an ASBR since we are redistributing its `lo0.0` interface generating a Type-7/NSSA External LSA.
+
+We can observe that vMX4 is indicating it is an `ABR` even though is `not` connected to area 0, it is also an ASBR since we are redistributing its `lo0.0` interface generating a Type-7/NSSA External LSA. This follows the definition provided earlier around Junos OSPF implementation.
 
 ```perl
 jcluser@vMX4# run show ospf overview
@@ -126,16 +125,19 @@ Router  *4.4.4.4          4.4.4.4          0x80000004   391  0x20 0x8762  36
   Last changed 00:06:31 ago, Change count: 2, Ours
 ```
 
-vMX2 and vM3 is seeing this route towards vMX4 in the route table.
+vMX2 and vM3 is seeing route 4.4.4.4/32 towards vMX4 in the `inet.0` route table.
 
 ```perl
-jcluser@vMX2# run show route table inet.0 4.4.4.4/32
+/vMX2
 
+jcluser@vMX2# run show route table inet.0 4.4.4.4/32
 inet.0: 15 destinations, 15 routes (15 active, 0 holddown, 0 hidden)
 + = Active Route, - = Last Active, * = Both
 
 4.4.4.4/32         *[OSPF/150] 00:08:07, metric 0, tag 0
                     >  to 10.100.24.2 via ge-0/0/2.0
+
+/vMX3
 
 jcluser@vMX3# run show route table inet.0 4.4.4.4/32
 
@@ -146,7 +148,7 @@ inet.0: 16 destinations, 16 routes (16 active, 0 holddown, 0 hidden)
                     >  to 10.100.34.2 via ge-0/0/0.0
 ```
 
-vMX2 and vMX3 should translate this LSA on their respective areas from Type-7 to Type-5 (should they?), but while checking the route table and LSDB we see the route is no found nor the LSA coming from the ABRs.
+`vMX2` and `vMX3` should be chosen as the NSSA Translators for their respective areas and translate this LSA from Type-7 to Type-5 (should they?), but if we check the route table and link-state database we see the LSA nor the route is found coming from the these ABR routers.
 
 ```perl
 jcluser@vMX1# run show route table inet.0 4.4.4.4/32
@@ -155,8 +157,15 @@ jcluser@vMX1# run show ospf database external lsa-id 4.4.4.4
 <no output>
 ```
 
-The issue is quite clear, vMX4 is competing for the election of the NSSA translator, since it consider itself as an ABR and it has the highest router-ID it wins the election, effectively disallowing vMX2 and vMX3 from translating Type-7 to Type-5 LSAs. Note that this is a behavior we would never see in `IOS`, since as mentioned earlier `IOS` will only set the Border bit when a router is attached between area 0 and any other area. 
-We can fix this by setting the router-ID in vMX4 to be lower than vMX2 and vMX3.
+The issue is quite clear if we revisit the fundamentals of OSPF. The criteria for selecting the NSSA Translator is based on two conditions: 
+1. The candidate router must be an ABR;
+2. The candidate router must have the highest router-ID;
+
+vMX2 and vMX3 are considered ABR’s for their respective areas, but vMX4 is also setting the Border bit, making it compete for the election of the NSSA Translator, note that in this case 1.1.1.1 or 2.2.2.2 vs. 4.4.4.4, the clear winer for the election is vMX4, this is the reason why vMX1 inside the backbone is unable to see the 4.4.4.4/32 prefix coming from vMX4.
+
+Note that this is a behaviour we would never see in `IOS`, since `IOS` will only set the Border bit when a router is attached between area 0 and any other area, which means that in the same scenario with `IOS` devices, vMX1 would have seen the 4.4.4.4/32.
+
+How can we solve reachability from vMX1 to vMX4 4.4.4.4/32 prefix? We can fix it by setting the router-ID in vMX4 to be lower than vMX2 and vMX3, hence making vMX2 and vMX3 be elected as the NSSA Translator for their respective areas.
 
 ```perl
 jcluser@vMX4# set routing-options router-id 1.1.1.4
