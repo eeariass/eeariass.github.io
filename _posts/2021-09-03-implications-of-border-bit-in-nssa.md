@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Junos vs. IOS: What makes an ABR an ABR?" 
-slug: what-makes-an-ABR-an-ABR
+title: "Junos vs. IOS: Implications of Border bit in NSSA" 
+slug: implications-of-border-bit-in-nssa
 ---
 
 Recently while navigating through the [Juniper Elevate](https://community.juniper.net) community I saw a [question](https://community.juniper.net/answers/communities/community-home/digestviewer/viewthread?GroupId=25&MessageKey=01b7b661-02fc-492d-8d4b-d5d3e7c99e4d&CommunityKey=18c17e96-c010-4653-84e4-f21341a8f208&tab=digestviewer&ReturnUrl=%2fbrowse%2fallrecentposts) that caught my interest around OSPF. After observing the behaviour I thought it would be good to create a blog on it since this is one of those minor implementation details between vendors that can have significant impact in reachability in certain scenarios, and in this blog we will explore that in sufficient detail.
