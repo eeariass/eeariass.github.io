@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Short tip: Checking the BGP best path reason in IOS-XR" 
+title: "Tip: Checking the BGP best path reason in IOS-XR" 
 slug: quick-ios-xr-tips-bgp-best-path-reason
 ---
 
