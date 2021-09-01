@@ -95,7 +95,7 @@ Expanding the router LSA in vMX4 we can observe the `bits 0x3` field in the LSA 
 /bits expanded
 
 V-bit = Virtual-Link (100 = 0x4)
-External-bit = ASBR-capable (010 - 0x2)
+External-bit = ASBR-capable (010 = 0x2)
 Border-bit = ABR-capable (001 = 0x1)
 ```
 
