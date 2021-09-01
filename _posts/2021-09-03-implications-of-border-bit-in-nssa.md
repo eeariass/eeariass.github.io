@@ -89,9 +89,15 @@ Instance: master
     Area border routers: 1, AS boundary routers: 1
 ```
 
-Expanding the router LSA in vMX4 we can observe the `bits 0x3` field in the LSA header, this corresponds to the ABR and ASBR bits being set, this is how the router via the Router LSA signals to the area that it is an ABR/ASBR for the NSSA.
+Expanding the router LSA in vMX4 we can observe the `bits 0x3` field in the LSA header, this corresponds to the ABR and ASBR bits being set, this is how the router via the Router LSA signals to the area that it is an ABR/ASBR for the NSSA. If we expand these bits the result would be as follows:
 
 ```perl
+/bits expanded
+
+V-bit = Virtual-Link (100 = 0x4)
+External-bit = ASBR-capable (010 - 0x2)
+Border-bit = ABR-capable (001 = 0x1)
+
 jcluser@vMX4# run show ospf database router lsa-id 4.4.4.4 extensive
 
     OSPF database, Area 0.0.0.24
