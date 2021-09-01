@@ -97,7 +97,11 @@ Expanding the router LSA in vMX4 we can observe the `bits 0x3` field in the LSA 
 V-bit = Virtual-Link (100 = 0x4)
 External-bit = ASBR-capable (010 - 0x2)
 Border-bit = ABR-capable (001 = 0x1)
+```
 
+As seen, if combined, External and Border bits would result in 0x3, which is what we are seeing in the Router LSA that vMX4 is originating.
+
+```perl
 jcluser@vMX4# run show ospf database router lsa-id 4.4.4.4 extensive
 
     OSPF database, Area 0.0.0.24
