@@ -169,7 +169,7 @@ The issue is quite clear if we revisit the fundamentals of OSPF. The criteria fo
 1. The candidate router must be an ABR;
 2. The candidate router must have the highest router-ID;
 
-vMX2 and vMX3 are considered ABR’s for their respective areas, but vMX4 is also setting the Border bit, making it compete for the election of the NSSA Translator, note that in this case 1.1.1.1 or 2.2.2.2 vs. 4.4.4.4, the clear winner for the election is vMX4, this is the reason why vMX1 inside the backbone is unable to see the 4.4.4.4/32 prefix coming from vMX4.
+vMX2 and vMX3 are considered ABR’s for their respective areas, but vMX4 is also setting the Border bit (even without being attached to the backbone!), making it compete for the election of the NSSA Translator, note that in this case 1.1.1.1 or 2.2.2.2 vs. 4.4.4.4, the clear winner for the election is vMX4, this is the reason why vMX1 inside the backbone is unable to see the 4.4.4.4/32 prefix coming from vMX4.
 
 Note that this is a behaviour we would never see in `IOS`, since `IOS` will only set the Border bit when a router is attached between area 0 and any other area, which means that in the same scenario with `IOS` devices, vMX1 would have seen the 4.4.4.4/32.
 
