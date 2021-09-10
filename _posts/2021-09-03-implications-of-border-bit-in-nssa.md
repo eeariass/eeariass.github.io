@@ -74,7 +74,7 @@ set protocols ospf area 0.0.0.34 interface ge-0/0/0.0
 set protocols ospf export OSPF-REDIST
 ```
 
-We can observe that vMX4 is indicating it is an `ABR` even though is `not` connected to area 0, it is also an ASBR since we are redistributing its `lo0.0` interface generating a Type-7/NSSA External LSA. This follows the definition provided earlier around Junos OSPF implementation.
+We can observe that vMX4 is indicating it is an `ABR` even though is `not` connected to area 0, it is also an ASBR and we are redistributing its `lo0.0` interface generating a Type-7/NSSA External LSA. This follows the definition provided earlier around Junos OSPF implementation.
 
 ```perl
 jcluser@vMX4# run show ospf overview
