@@ -1,0 +1,79 @@
+---
+layout: post
+title: "Tip: OSPF unequal-cost (UCMP) multipath in IOS-XR" 
+slug: ucmp-osppf
+---
+One of the not-so-well-known features IOS-XR platforms supports that IOS-XE does not is that it allows all IGP’s as well as Static Routing for unequal multipath (ECMP). By leveraging the weight distribution in CEF, if the IGP considers that the alternate path is loop-free, it allows the alternate path to be installed in the forwarding plane with a weight value that is derived from the metric assigned to the path allowing load-sharing proportionally based on the given cost. This is what IOS-XE is known as **traffic share count**. 
+
+**Note:** For further information on IOS-XR weight distributions refer to [leveraging IOS-XR weights](https://www.cisco.com/c/en/us/support/docs/ios-nx-os-software/ios-xr-software/213936-understanding-cef-weight-distributions-i.html) documentation.
+
+Initially XR1 is seeing the prefix 2.2.2.2/32 coming from XR1 as equally shared across interface gi0/0/0/0.12 and gi0/0/0/0.21 respectively.
+
+
+```
+RP/0/0/CPU0:XR1#show route 2.2.2.2/32
+<snip>
+Routing entry for 2.2.2.2/32
+  Known via "ospf 12", distance 110, metric 2, type intra area
+  Routing Descriptor Blocks
+	12.0.0.2, from 2.2.2.2, via GigabitEthernet0/0/0/0.12
+  	Route metric is 2
+	21.0.0.2, from 2.2.2.2, via GigabitEthernet0/0/0/0.21
+  	Route metric is 2
+  No advertising protos.
+```
+
+
+Same weight has been assigned to both links.
+
+
+```
+RP/0/0/CPU0:XR1#show cef ipv4 2.2.2.2/32 hardware egress detail
+<snip>
+2.2.2.2/32, version 15, internal 0x1000001 0x0 (ptr 0xa1423bf4) [1], 0x0 (0xa13ef464), 0x0 (0x0)
+   via 12.0.0.2/32, GigabitEthernet0/0/0/0.12, 5 dependencies, weight 0, class 0 [flags 0x0]
+	path-idx 0 NHID 0x0 [0xa0f571fc 0x0]
+	next hop 12.0.0.2/32
+	local adjacency
+   via 21.0.0.2/32, GigabitEthernet0/0/0/0.21, 5 dependencies, weight 0, class 0 [flags 0x0]
+	path-idx 1 NHID 0x0 [0xa0f571a8 0x0]
+	next hop 21.0.0.2/32
+	local adjacency
+	Load distribution: 0 1 (refcount 2)
+	Hash  OK  Interface             	Address
+	0 	Y   GigabitEthernet0/0/0/0.12 12.0.0.2  	 
+	1 	Y   GigabitEthernet0/0/0/0.21 21.0.0.2  	 
+```
+
+
+Let’s change the cost towards XR2 on gi0/0/0/0.21 to 5 and set the variance multiplier to consider the alternate path.
+
+
+```
+router ospf 12
+ ucmp variance 10000
+!
+ interface GigabitEthernet0/0/0/0.21
+  cost 5
+ !
+end
+```
+
+
+**Note**: The variance does not have influence in the resulting weight assignments by CEF.
+
+
+```
+RP/0/0/CPU0:XR1#show route 2.2.2.2/32   	 
+<snip>
+Routing entry for 2.2.2.2/32
+  Known via "ospf 12", distance 110, metric 2, type intra area
+  Routing Descriptor Blocks
+	12.0.0.2, from 2.2.2.2, via GigabitEthernet0/0/0/0.12
+  	Route metric is 2, Wt is 4294967295 <<
+	21.0.0.2, from 2.2.2.2, via GigabitEthernet0/0/0/0.21
+  	Route metric is 2, Wt is 1431655764 <<
+  No advertising protos.
+```
+
+Note that the weight assigned to each interface is 4294967295 for the primary path and 1431655764 for the secondary path, this means that the primary path would take 3x the load of the secondary, since its metric is 2 versus 6, is 3x better than the alternate path.
