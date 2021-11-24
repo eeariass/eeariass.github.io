@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-`my $name = "elvin";`, I am a just a straightfoward hooman and a network engineer - Plus I happen to love what I do. ; )
+`my $name = "elvin";`, I am a just a straightfoward hooman, a devopted learner, and a network engineer - Plus I happen to love what I do. ; )
 
 I will use this space to share some things I find interesting and/or put notes on things I am studying around networking. Please do not have high expectations, this space is called `null0.network` for a reason, this might be just things I drop here and might get lost forever violating the principles of the No-hiding theorem. :)
 
