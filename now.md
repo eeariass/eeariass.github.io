@@ -1,6 +1,6 @@
 ---
 layout: page
-title: now
+title: Now
 permalink: /now/
 ---
 # Hobbies
