@@ -103,7 +103,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **Description:** UCMP feature is covered for IOS-XR and goes through different examples of weight manipulations using precise mathematics to demonstrate how CEF hash buckets are distributed\
 **Publish date: January 2018**
 
-**[Configuring non-Path Computation Element (PCE)-based Inter-Area Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Rm01xM)
+**[Configuring non-Path Computation Element (PCE)-based Inter-Area Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Rm01xM)**\
 **Description:** How can Inter-Area SR-TE be configured without a path computation element (PCE) is explained in-depth using different cases\
 **Publish date: January 2018**
 
