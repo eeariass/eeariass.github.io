@@ -12,17 +12,17 @@ Ownership. Devoted learner. Motivated. Collaborator. Mentor.
 
 **Network Development Engineer, Internet Edge Engineering**\
 **[Amazon](https://aws.amazon.com/)**\
-**October 2019 - present**
+**October 2019 - present**\
 **Location: Ireland
 
-Architecture and deployment of Amazon border network, and the traffic engineering associated with it
+Architecture and deployment of Amazon border network, and the traffic engineeringassociated with it
 In-depth knowledge of and experience with major IP technologies including BGP, OSPF, MPLS, RSVP-TE, IS-IS, IPv4/IPv6
 The highest technical escalation point for operational issues related to Amazon Border network
 Basic programming/scripting skills on Python, Perl, and Bash
 
 **Technical Consulting Engineer, Service Provider**\
 **[Cisco](cisco.com/)**\
-**January 2017 to August 2019**
+**January 2017 to August 2019**\
 **Location: Mexico
 
 Service Provider TAC Senior Engineer
@@ -36,7 +36,7 @@ Delivery of technical trainings for current and emerging technologies to TAC eng
 
 **Network Engineer**\
 **[IDAC](https://www.idac.gob.do/)**\
-**June 2011 to December 2016**
+**June 2011 to December 2016**\
 
 Design, implementation, and operations of a highly-secure Aeronautical Telecommunication Network (ATN)
 Administration of a safety-critical network infrastructure
@@ -45,9 +45,9 @@ Designed and implemented the networking infrastructure for the Air Traffic Contr
 
 ## Certifications
 
-[Cisco Certified Internetwork Expert (CCIE) - Enterprise Infrastructure](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
-[Cisco Certified Internetwork Expert (CCIE) - Service Provider](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
-[Juniper Certified Internet Professional (JNCIP) - Service Provider](https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncip-sp.html)
+** [Cisco Certified Internetwork Expert (CCIE) - Enterprise ** Infrastructure](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
+** [Cisco Certified Internetwork Expert (CCIE) - Service Provider](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
+** [Juniper Certified Internet Professional (JNCIP) - Service Provider](https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncip-sp.html)
 
 ## Volunteering
 
