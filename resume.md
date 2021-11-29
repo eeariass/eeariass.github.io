@@ -91,7 +91,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **Description:** In this article I explain how to manipulate the Cisco Express Forwarding (CEF) traffic share counts\
 **Publish date:** September 2021
 
-**[Definitive IS-IS - BRKRST-2315](https://bit.ly/2ZDPTEu)**\
+**[BRKRST-2315: Definitive Intermediate System to Intermediate System](https://bit.ly/2ZDPTEu)**\
 **Description:** Cisco Live Speaker for breakout session covering IS-IS mechanics in-depth\
 **Publish date:** January 2019
 
