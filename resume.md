@@ -59,14 +59,15 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 ## Education
 
 **[Universidad Iberoamericana](https://www.unibe.edu.do/)**\
+**Bachelor of Engineering in Communications and Information Technology**\
 **June 2011 to December 2016**\
 **Location: Dominican Republic**
 
-**Bachelor of Engineering in Communications and Information Technology**\
+**[Las Americas Institute of Technology](https://itla.edu.do//) ** Associate Degree In Networking**\
+**Associate Degree in Networking **\
 **2012 - 2015**\
 **Location: Dominican Republic**
 
-**[Las Americas Institute of Technology](https://itla.edu.do//) ** Associate Degree In Networking**\
 ** 01/2008 - 11/2010 **
 
 ## Languages
