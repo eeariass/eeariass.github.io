@@ -4,7 +4,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 
 **Network Development Engineer, Internet Edge Engineering**\
 **[Amazon](https://aws.amazon.com/)**\
-**October 2019 - present**\
+**October 2019 to present**\
 **Location: Ireland**
 
 * Architecture and deployment of Amazon border network, and the traffic engineering associated with it
@@ -65,7 +65,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 
 **[Las Americas Institute of Technology](https://itla.edu.do/)**\
 **Associate Degree In Networking**\
-**01/2008 - 11/2010**\
+**January 2008 to November 2010**\
 **Location: Dominican Republic**
 
 ## Languages
@@ -77,7 +77,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 ## Recognitions
 
 **[Cisco Designated VIP](https://www.cisco.com/c/en/us/support/web/communities/vip.html)**
-* This Cisco program recognizes the top experts network engineers worldwide who contribute among Cisco networking communities. Selected as a Cisco Designated VIP by Cisco Systems due to contributions made on years 2013, 2014, 2015, 2016, 2017, 2020, 2021, and 2022
+* This Cisco program recognizes the top experts network engineers worldwide who contribute among Cisco networking communities. Selected as a Cisco Designated VIP by Cisco Systems due to contributions made on years 2013, 2014, 2015, 2016, 2017, 2020, and 2021
 
 **[Cisco Community Spotlight Awards](https://learningnetwork.cisco.com/s/spotlight-awards)**
 * Received the Cisco Community Spotlight Awards 2012 on the Technical Excellence category, which recognise members of Cisco communities who demonstrate leadership and commitment to peers by making a significant contribution of time and expertise within their respective communities
@@ -89,28 +89,28 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 
 **[Understanding EIGRP Unequal-Cost Multipath (UCMP) Traffic Share Distributions](https://is.gd/gvpoTM)**\
 **Description: In this article I explain how to manipulate the Cisco Express Forwarding (CEF) traffic share counts**\
-**Publish date: 09/2021**
+**Publish date: September 2021**
 
 **[Definitive IS-IS - BRKRST-2315](https://bit.ly/2ZDPTEu)**\
 **Description: Cisco Live Speaker for breakout session covering IS-IS mechanics in-depth**\
-**Publish date: 01/2019**
+**Publish date: January 2019**
 
 **[Understanding BGP Dynamic Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Q4MkqB)**\
 **Description: In-depth demonstration of BGP Dynamic SR-TE feature in IOS-XR**\
-**Publish date: 01/2018**
+**Publish date: January 2018**
 
 **[Understanding CEF Weight Distributions In Unequal-cost Load Multipath](https://bit.ly/2PEsFIZ)**\
 **Description: UCMP feature is covered for IOS-XR and goes through different examples of weight manipulations using precise mathematics to demonstrate how CEF hash buckets are distributed**\
-**Publish date: 01/2018**
+**Publish date: January 2018**
 
 **[Configuring non-Path Computation Element (PCE)-based Inter-Area Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Rm01xM)**\
 **Description: How can Inter-Area SR-TE be configured without a path computation element (PCE) is explained in-depth using different cases**\
-**Publish date: 01/2018**
+**Publish date: January 2018**
 
 **[Introduction to ASR 9000 and IOS XR CLI](https://bit.ly/2CutlvL) **\
 **Description: Host of an expert Webcast event for the Cisco Community. In this event we discussed the ASR9K architecture and IOS XR CLI introduction**\
-**Publish date: 01/2018**
+**Publish date: January 2018**
 
 **[Border Gateway Protocol (BGP): Configuration and Implementation](https://bit.ly/2W5BrnB)**\
 **Description:** Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting
-**Publish date:** 01/2018
+**Publish date:** January 2018
