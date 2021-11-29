@@ -47,7 +47,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 
 ## Technical Volunteering
 
-*[CCIE Lab Exam Content Developer](https://learningnetwork.cisco.com/s/article/sme-recruitment-program-overview/)**\
+**[CCIE Lab Exam Content Developer](https://learningnetwork.cisco.com/s/article/sme-recruitment-program-overview/)**\
 **January 2018 to present**\
 * External contributor serving as part of the Subject-Matter Experts (SMEs) in charge of the content development of the CCIE Enterprise Infrastructure lab exam questions and scenarios
 Regularly consult on technologies present in the CCIE lab, serve as trusted exam tester, and developer of content
