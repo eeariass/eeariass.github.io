@@ -42,7 +42,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 
 ## Volunteering
 
-**[Irish Cancer Society](https://https://www.cancer.ie/)**\
+**[Irish Cancer Society](https://https://www.cancer.ie/)**
 * **August 2021 to present**
 
 ## Technical Volunteering
