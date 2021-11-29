@@ -53,18 +53,21 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 Regularly consult on technologies present in the CCIE lab, serve as trusted exam tester, and developer of content
 
 **[Wireshark Contributor](https://www.wireshark.org/about.html/)**\
-** January 2021 to present**\
+**January 2021 to present**\
 * Randomly provided fixes to dissectors to the well-known open-source project called Wireshark [Not a C/C++ guy, but can do a thing or two there]. Can find my name in the public project author page for verification purposes, https://www.wireshark.org/about.html.
 
 ## Education
 
-**[Universidad Iberoamericana](https://www.unibe.edu.do/) **\
-** Bachelor of Engineering in Communications and Information Technology **\
-** 2012 - 2015 **
+**[Universidad Iberoamericana](https://www.unibe.edu.do/)**\
+**June 2011 to December 2016**\
+**Location: Dominican Republic**
+
+**Bachelor of Engineering in Communications and Information Technology**\
+**2012 - 2015**\
+**Location: Dominican Republic**
 
 **[Las Americas Institute of Technology](https://itla.edu.do//) ** Associate Degree In Networking**\
 ** 01/2008 - 11/2010 **
-
 
 ## Languages
 * Spanish (Native)
