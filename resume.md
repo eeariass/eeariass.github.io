@@ -65,10 +65,8 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 
 **[Las Americas Institute of Technology](https://itla.edu.do/) 
 ** Associate Degree In Networking**\
-**2012 - 2015**\
-**Location: Dominican Republic**
-
 ** 01/2008 - 11/2010 **
+**Location: Dominican Republic**
 
 ## Languages
 * Spanish (Native)
@@ -114,5 +112,5 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **Publish date: 01/2018**
 
 **[Border Gateway Protocol (BGP): Configuration and Implementation](https://bit.ly/2W5BrnB)**\
-**Description: Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting**\
+**Description:**\ Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting
 **Publish date: 01/2018**
