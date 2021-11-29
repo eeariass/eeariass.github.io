@@ -84,7 +84,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **[Cisco Community Spotlight Awards](https://learningnetwork.cisco.com/s/spotlight-awards)**
 * Received the Cisco Community Spotlight Awards 2012 on the Technical Excellence category, which recognise members of Cisco communities who demonstrate leadership and commitment to peers by making a significant contribution of time and expertise within their respective communities
 
-**[Graduate Student Award](https://itla.edu.do/)**\
+**[Graduate Student Award](https://itla.edu.do/)**
 * Recognised by former university Las Americas Institute of Technology for my professional and ethical values
 
 ## Technical Publications
