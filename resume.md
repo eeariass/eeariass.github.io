@@ -1,75 +1,66 @@
 
+## Summary
 
-Elvin Arias
-Location: Ireland
-
-## Summary 
 Network Engineer with wide knowledge and experience in Enterprise and Service Provider routing & switching technologies.
-
-Ownership. Devoted learner. Motivated. Collaborator. Mentor.
 
 ## Employment History
 
 **Network Development Engineer, Internet Edge Engineering**\
 **[Amazon](https://aws.amazon.com/)**\
 **October 2019 - present**\
-**Location: Ireland
+**Location: Ireland**
 
-Architecture and deployment of Amazon border network, and the traffic engineeringassociated with it
-In-depth knowledge of and experience with major IP technologies including BGP, OSPF, MPLS, RSVP-TE, IS-IS, IPv4/IPv6
-The highest technical escalation point for operational issues related to Amazon Border network
-Basic programming/scripting skills on Python, Perl, and Bash
+* Architecture and deployment of Amazon border network, and the traffic engineering associated with it
+* In-depth knowledge of and experience with major IP technologies including BGP, OSPF, MPLS, RSVP-TE, IS-IS, IPv4/IPv6
+* The highest technical escalation point for operational issues related to Amazon Border network
+* Basic programming/scripting skills on Python, Perl, and Bash
 
 **Technical Consulting Engineer, Service Provider**\
 **[Cisco](cisco.com/)**\
 **January 2017 to August 2019**\
-**Location: Mexico
-
-Service Provider TAC Senior Engineer
-Providing technical support to the biggest Enterprise networks and Service Providers around the world
-Deep level understanding of all IOS XR routing platform architecture
-Mentoring of new XR TAC team engineers
-Serve as an escalation reference for complex issues within the team
-Delivery of technical trainings for current and emerging technologies to TAC engineers
+**Location: Mexico**
 
 
+* Service Provider TAC Senior Engineer
+* Providing technical support to the biggest Enterprise networks and Service Providers around the world
+* Deep level understanding of all IOS XR routing platform architecture
+* Mentoring of new XR TAC team engineers
+* Serve as an escalation reference for complex issues within the team
+* Delivery of technical trainings for current and emerging technologies to TAC engineers
 
 **Network Engineer**\
 **[IDAC](https://www.idac.gob.do/)**\
 **June 2011 to December 2016**\
+**Location: Dominican Republic**
 
-Design, implementation, and operations of a highly-secure Aeronautical Telecommunication Network (ATN)
-Administration of a safety-critical network infrastructure
-Working with IP Routing technologies, Multicast, L2 Switching, and MPLS
-Designed and implemented the networking infrastructure for the Air Traffic Control System of the country
+* Design, implementation, and operations of a highly-secure Aeronautical Telecommunication Network (ATN)
+* Administration of a safety-critical network infrastructure
+* Working with IP Routing technologies, Multicast, L2 Switching, and MPLS
+* Designed and implemented the networking infrastructure for the Air Traffic Control System of the country
 
 ## Certifications
 
-** [Cisco Certified Internetwork Expert (CCIE) - Enterprise ** Infrastructure](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
-** [Cisco Certified Internetwork Expert (CCIE) - Service Provider](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
-** [Juniper Certified Internet Professional (JNCIP) - Service Provider](https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncip-sp.html)
+* [Cisco Certified Internetwork Expert (CCIE) - Enterprise ** Infrastructure](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
+* [Cisco Certified Internetwork Expert (CCIE) - Service Provider](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
+* [Juniper Certified Internet Professional (JNCIP) - Service Provider](https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncip-sp.html)
 
 ## Volunteering
 
 **[Irish Cancer Society](https://https://www.cancer.ie/)**\
 **August 2021 to present**
 
-Monthly donor
-
 ## Technical Volunteering
 
-**[CCIE Lab Exam Content Developer](https://learningnetwork.cisco.com/s/article/sme-recruitment-program-overview/)**\
-**January 2018 to present**
+*[CCIE Lab Exam Content Developer](https://learningnetwork.cisco.com/s/article/sme-recruitment-program-overview/)**\
+*January 2018 to present
 
 External contributor serving as part of the Subject-Matter Experts (SMEs) in charge of the content development of the CCIE Enterprise Infrastructure lab exam questions and scenarios
 Regularly consult on technologies present in the CCIE lab, serve as trusted exam tester, and developer of content
 
 **[Wireshark Contributor](https://www.wireshark.org/about.html/)**\
 **January 2021 to present**
+* Randomly provided fixes to dissectors to the well-known open-source project called Wireshark [Not a C/C++ guy, but can do a thing or two there]. Can find my name in the public project author page for verification purposes, https://www.wireshark.org/about.html.
 
-Randomly provided fixes to dissectors to the well-known open-source project called Wireshark [Not a C/C++ guy, but can do a thing or two there]. Can find my name in the public project author page for verification purposes, https://www.wireshark.org/about.html.
-
-## Education
 
 ### **[Universidad Iberoamericana](https://www.unibe.edu.do/) **
 Bachelor of Engineering in Communications and Information Technology, 2012 - 2015\
