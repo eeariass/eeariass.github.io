@@ -39,8 +39,8 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 
 ## Certifications
 
-* [Cisco Certified Internetwork Expert (CCIE) - Enterprise ** Infrastructure](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
-* [Cisco Certified Internetwork Expert (CCIE) - Service Provider](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)
+* [Cisco Certified Internetwork Expert (CCIE) - Enterprise Infrastructure](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html), #57406
+* [Cisco Certified Internetwork Expert (CCIE) - Service Provider](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html), #57406
 * [Juniper Certified Internet Professional (JNCIP) - Service Provider](https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncip-sp.html)
 
 ## Volunteering
