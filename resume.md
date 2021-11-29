@@ -71,48 +71,48 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 ** 01/2008 - 11/2010 **
 
 ## Languages
-* Spanish (Native)
-* English (Professional)
-* Portuguese (Professional)
-* French (Basic)
+**Spanish (Native)**\
+**English (Professional)**\
+**Portuguese (Professional)**\
+**French (Basic)**
 
 ## Recognitions
 
-[Cisco Designated VIP](https://www.cisco.com/c/en/us/support/web/communities/vip.html)
+**[Cisco Designated VIP](https://www.cisco.com/c/en/us/support/web/communities/vip.html)**\
 * This Cisco program recognizes the top experts network engineers worldwide who contribute among Cisco networking communities. Selected as a Cisco Designated VIP by Cisco Systems due to contributions made on years 2013, 2014, 2015, 2016, 2017, 2020, 2021, and 2022
 
-[Cisco Community Spotlight Awards](https://learningnetwork.cisco.com/s/spotlight-awards)
+**[Cisco Community Spotlight Awards](https://learningnetwork.cisco.com/s/spotlight-awards)**\
 * Received the Cisco Community Spotlight Awards 2012 on the Technical Excellence category, which recognise members of Cisco communities who demonstrate leadership and commitment to peers by making a significant contribution of time and expertise within their respective communities
 
-[Graduate Student Award](https://itla.edu.do/)
-* Recognized by former university Las Americas Institute of Technology for my professional and ethical values
+**[Graduate Student Award](https://itla.edu.do/)**\
+* Recognised by former university Las Americas Institute of Technology for my professional and ethical values
 
 ## Technical Publications
 
 **[Understanding EIGRP Unequal-Cost Multipath (UCMP) Traffic Share Distributions](https://is.gd/gvpoTM)**\
-**Publish date: 09/2021**\
+**Publish date: 09/2021**
 * In this article I explain how to manipulate the Cisco Express Forwarding (CEF) traffic share counts
 
 **[Definitive IS-IS - BRKRST-2315](https://bit.ly/2ZDPTEu)**\
-**Publish date: 01/2019 **\
+**Publish date: 01/2019**
 * Cisco Live Speaker for breakout session covering IS-IS mechanics in-depth
 
 **[Understanding BGP Dynamic Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Q4MkqB)**\
-**Publish date: 01/2018**\
+**Publish date: 01/2018**
 * In-depth demonstration of BGP Dynamic SR-TE feature in IOS-XR 
 
 **[Understanding CEF Weight Distributions In Unequal-cost Load Multipath](https://bit.ly/2PEsFIZ)**\
-**Publish date: 01/2018**\
+**Publish date: 01/2018**
 * UCMP feature is covered for IOS-XR and goes through different examples of weight manipulations using precise mathematics to demonstrate how CEF hash buckets are distributed
 
 **[Configuring non-Path Computation Element (PCE)-based Inter-Area Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Rm01xM) **\
-**Publish date: 01/2018**\
+**Publish date: 01/2018**
 * How can Inter-Area SR-TE be configured without a path computation element (PCE) is explained in-depth using different cases
 
 **[Introduction to ASR 9000 and IOS XR CLI](https://bit.ly/2CutlvL) **\
-**Publish date: 01/2018**\
+**Publish date: 01/2018**
 * Host of an expert Webcast event for the Cisco Community. In this event we discussed the ASR9K architecture and IOS XR CLI introduction
 
 **[Border Gateway Protocol (BGP): Configuration and Implementation](https://bit.ly/2W5BrnB)**\
-**Publish date: 01/2018**\
+**Publish date: 01/2018**
 * Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting
