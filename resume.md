@@ -5,7 +5,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **Network Development Engineer, Internet Edge Engineering**\
 **[Amazon](https://aws.amazon.com/)**\
 **October 2019 to present**\
-**Location: Ireland**
+**Location:** Ireland
 
 * Architecture and deployment of Amazon border network, and the traffic engineering associated with it
 * In-depth knowledge of and experience with major IP technologies including BGP, OSPF, MPLS, RSVP-TE, IS-IS, IPv4/IPv6
@@ -15,7 +15,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **Technical Consulting Engineer, Service Provider**\
 **[Cisco](cisco.com/)**\
 **January 2017 to August 2019**\
-**Location: Mexico**
+**Location:** Mexico
 
 * Service Provider TAC Senior Engineer
 * Providing technical support to the biggest Enterprise networks and Service Providers around the world
@@ -27,7 +27,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **Network Engineer**\
 **[IDAC](https://www.idac.gob.do/)**\
 **June 2011 to December 2016**\
-**Location: Dominican Republic**
+**Location:** Dominican Republic
 
 * Design, implementation, and operations of a highly-secure Aeronautical Telecommunication Network (ATN)
 * Administration of a safety-critical network infrastructure
