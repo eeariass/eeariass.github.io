@@ -67,20 +67,20 @@ Regularly consult on technologies present in the CCIE lab, serve as trusted exam
 
 
 ## Languages
-* Spanish, proficiency: Native
-* English, proficiency: Professional
-* Portuguese, proficiency: Professional
-* French, proficiency: Intermediate
+* Spanish (Native)
+* English (Professional)
+* Portuguese (Professional)
+* French (Basic)
 
 ## Recognitions
 
-**[Cisco Designated VIP](https://www.cisco.com/c/en/us/support/web/communities/vip.html) **\
+[Cisco Designated VIP](https://www.cisco.com/c/en/us/support/web/communities/vip.html)
 * This Cisco program recognizes the top experts network engineers worldwide who contribute among Cisco networking communities. Selected as a Cisco Designated VIP by Cisco Systems due to contributions made on years 2013, 2014, 2015, 2016, 2017, 2020, 2021, and 2022
 
-**[Cisco Community Spotlight Awards](https://learningnetwork.cisco.com/s/spotlight-awards) **\
+[Cisco Community Spotlight Awards](https://learningnetwork.cisco.com/s/spotlight-awards)
 * Received the Cisco Community Spotlight Awards 2012 on the Technical Excellence category, which recognise members of Cisco communities who demonstrate leadership and commitment to peers by making a significant contribution of time and expertise within their respective communities
 
-***[Graduate Student Award](https://itla.edu.do/) **\
+[Graduate Student Award](https://itla.edu.do/)
 * Recognized by former university Las Americas Institute of Technology for my professional and ethical values
 
 ## Technical Publications
