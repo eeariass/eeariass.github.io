@@ -112,5 +112,5 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **Publish date: 01/2018**
 
 **[Border Gateway Protocol (BGP): Configuration and Implementation](https://bit.ly/2W5BrnB)**\
-**Description:**\ Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting
-**Publish date: 01/2018**
+**Description:** Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting
+**Publish date:** 01/2018
