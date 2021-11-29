@@ -107,7 +107,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **Description:** How can Inter-Area SR-TE be configured without a path computation element (PCE) is explained in-depth using different cases\
 **Publish date: January 2018**
 
-**[Introduction to ASR 9000 and IOS XR CLI](https://bit.ly/2CutlvL) **\
+**[Introduction to ASR 9000 and IOS XR CLI](https://bit.ly/2CutlvL)**\
 **Description:** Host of an expert Webcast event for the Cisco Community. In this event we discussed the ASR9K architecture and IOS XR CLI introduction\
 **Publish date: January 2018**
 
