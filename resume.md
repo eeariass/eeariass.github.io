@@ -52,7 +52,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 * External contributor serving as part of the Subject-Matter Experts (SMEs) in charge of the content development of the CCIE Enterprise Infrastructure lab exam questions and scenarios
 * Regularly consult on technologies present in the CCIE lab, serve as trusted exam tester, and developer of content
 
-**[Wireshark Contributor](https://www.wireshark.org/about.html/)**\
+**[Wireshark Contributor](https://www.wireshark.org/about.html)**\
 **January 2021 to present**
 * Randomly provided fixes to dissectors to the well-known open-source project called Wireshark [Not a C/C++ guy, but can do a thing or two there]. Can find my name in the public project author page for verification purposes, https://www.wireshark.org/about.html.
 
