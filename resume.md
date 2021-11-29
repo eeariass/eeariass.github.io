@@ -38,7 +38,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 
 **[Cisco Certified Internetwork Expert (CCIE) - Enterprise Infrastructure, #57406](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)**\
 **[Cisco Certified Internetwork Expert (CCIE) - Service Provider, #57406](https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/expert.html)**\
-**[Juniper Certified Internet Professional (JNCIP) - Service Provider](https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncip-sp.html)**\
+**[Juniper Certified Internet Professional (JNCIP) - Service Provider](https://www.juniper.net/us/en/training/certification/tracks/service-provider-routing-switching/jncip-sp.html)**
 
 ## Volunteering
 
@@ -48,12 +48,12 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 ## Technical Volunteering
 
 **[CCIE Lab Exam Content Developer](https://learningnetwork.cisco.com/s/article/sme-recruitment-program-overview/)**\
-**January 2018 to present**\
+**January 2018 to present**
 * External contributor serving as part of the Subject-Matter Experts (SMEs) in charge of the content development of the CCIE Enterprise Infrastructure lab exam questions and scenarios
 Regularly consult on technologies present in the CCIE lab, serve as trusted exam tester, and developer of content
 
 **[Wireshark Contributor](https://www.wireshark.org/about.html/)**\
-**January 2021 to present**\
+**January 2021 to present**
 * Randomly provided fixes to dissectors to the well-known open-source project called Wireshark [Not a C/C++ guy, but can do a thing or two there]. Can find my name in the public project author page for verification purposes, https://www.wireshark.org/about.html.
 
 ## Education
