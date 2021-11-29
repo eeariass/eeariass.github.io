@@ -63,7 +63,7 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **June 2011 to December 2016**\
 **Location: Dominican Republic**
 
-**[Las Americas Institute of Technology](https://itla.edu.do/) 
+**[Las Americas Institute of Technology](https://itla.edu.do/)**\
 ** Associate Degree In Networking**\
 **01/2008 - 11/2010**\
 **Location: Dominican Republic**
