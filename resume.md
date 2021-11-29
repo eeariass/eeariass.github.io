@@ -61,12 +61,12 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **[Universidad Iberoamericana](https://www.unibe.edu.do/)**\
 **Bachelor of Engineering in Communications and Information Technology**\
 **June 2011 to December 2016**\
-**Location: Dominican Republic**
+**Location:** Dominican Republic
 
 **[Las Americas Institute of Technology](https://itla.edu.do/)**\
 **Associate Degree In Networking**\
 **January 2008 to November 2010**\
-**Location: Dominican Republic**
+**Location:** Dominican Republic**
 
 ## Languages
 * Spanish (Native)
@@ -89,27 +89,27 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 
 **[Understanding EIGRP Unequal-Cost Multipath (UCMP) Traffic Share Distributions](https://is.gd/gvpoTM)**\
 **Description:** In this article I explain how to manipulate the Cisco Express Forwarding (CEF) traffic share counts\
-**Publish date: September 2021**
+**Publish date:** September 2021
 
 **[Definitive IS-IS - BRKRST-2315](https://bit.ly/2ZDPTEu)**\
 **Description:** Cisco Live Speaker for breakout session covering IS-IS mechanics in-depth\
-**Publish date: January 2019**
+**Publish date:** January 2019
 
 **[Understanding BGP Dynamic Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Q4MkqB)**\
 **Description:** In-depth demonstration of BGP Dynamic SR-TE feature in IOS-XR\
-**Publish date: January 2018**
+**Publish date:** January 2018
 
 **[Understanding CEF Weight Distributions In Unequal-cost Load Multipath](https://bit.ly/2PEsFIZ)**\
 **Description:** UCMP feature is covered for IOS-XR and goes through different examples of weight manipulations using precise mathematics to demonstrate how CEF hash buckets are distributed\
-**Publish date: January 2018**
+**Publish date:** January 2018
 
 **[Configuring non-Path Computation Element (PCE)-based Inter-Area Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Rm01xM)**\
 **Description:** How can Inter-Area SR-TE be configured without a path computation element (PCE) is explained in-depth using different cases\
-**Publish date: January 2018**
+**Publish date:** January 2018
 
 **[Introduction to ASR 9000 and IOS XR CLI](https://bit.ly/2CutlvL)**\
 **Description:** Host of an expert Webcast event for the Cisco Community. In this event we discussed the ASR9K architecture and IOS XR CLI introduction\
-**Publish date: January 2018**
+**Publish date:** January 2018
 
 **[Border Gateway Protocol (BGP): Configuration and Implementation](https://bit.ly/2W5BrnB)**\
 **Description:** Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting\
