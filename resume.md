@@ -90,29 +90,29 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 ## Technical Publications
 
 **[Understanding EIGRP Unequal-Cost Multipath (UCMP) Traffic Share Distributions](https://is.gd/gvpoTM)**\
-**In this article I explain how to manipulate the Cisco Express Forwarding (CEF) traffic share counts**\
+**Description: In this article I explain how to manipulate the Cisco Express Forwarding (CEF) traffic share counts**\
 **Publish date: 09/2021**
 
 **[Definitive IS-IS - BRKRST-2315](https://bit.ly/2ZDPTEu)**\
-**Cisco Live Speaker for breakout session covering IS-IS mechanics in-depth**\
+**Description: Cisco Live Speaker for breakout session covering IS-IS mechanics in-depth**\
 **Publish date: 01/2019**
 
 **[Understanding BGP Dynamic Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Q4MkqB)**\
-**In-depth demonstration of BGP Dynamic SR-TE feature in IOS-XR**\
+**Description: In-depth demonstration of BGP Dynamic SR-TE feature in IOS-XR**\
 **Publish date: 01/2018**
 
 **[Understanding CEF Weight Distributions In Unequal-cost Load Multipath](https://bit.ly/2PEsFIZ)**\
-**UCMP feature is covered for IOS-XR and goes through different examples of weight manipulations using precise mathematics to demonstrate how CEF hash buckets are distributed**\
+**Description: UCMP feature is covered for IOS-XR and goes through different examples of weight manipulations using precise mathematics to demonstrate how CEF hash buckets are distributed**\
 **Publish date: 01/2018**
 
-**[Configuring non-Path Computation Element (PCE)-based Inter-Area Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Rm01xM) **\
-**How can Inter-Area SR-TE be configured without a path computation element (PCE) is explained in-depth using different cases**\
+**[Configuring non-Path Computation Element (PCE)-based Inter-Area Segment Routing Traffic Engineering (SR-TE)](https://bit.ly/2Rm01xM)**\
+**Description: How can Inter-Area SR-TE be configured without a path computation element (PCE) is explained in-depth using different cases**\
 **Publish date: 01/2018**
 
 **[Introduction to ASR 9000 and IOS XR CLI](https://bit.ly/2CutlvL) **\
-**Host of an expert Webcast event for the Cisco Community. In this event we discussed the ASR9K architecture and IOS XR CLI introduction**\
+**Description: Host of an expert Webcast event for the Cisco Community. In this event we discussed the ASR9K architecture and IOS XR CLI introduction**\
 **Publish date: 01/2018**
 
 **[Border Gateway Protocol (BGP): Configuration and Implementation](https://bit.ly/2W5BrnB)**\
-**Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting**\
+**Description: Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting**\
 **Publish date: 01/2018**
