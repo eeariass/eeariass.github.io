@@ -110,8 +110,8 @@ Network Engineer with wide knowledge and experience in Enterprise and Service Pr
 **Publish date: 01/2018**
 
 **[Introduction to ASR 9000 and IOS XR CLI](https://bit.ly/2CutlvL) **\
-**Host of an expert Webcast event for the Cisco Community. In this event we discussed the ASR9K architecture and IOS XR CLI introduction**\
-**Publish date: 01/2018**
+*Host of an expert Webcast event for the Cisco Community. In this event we discussed the ASR9K architecture and IOS XR CLI introduction*\
+*Publish date: 01/2018*
 
 **[Border Gateway Protocol (BGP): Configuration and Implementation](https://bit.ly/2W5BrnB)**\
 **Hosted "Ask the Expert" event for the Cisco Community forums. Cisco customers and partners had the opportunity to ask questions related to the of BGP's implementation, configuration, design, and troubleshooting**\
