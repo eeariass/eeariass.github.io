@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Now
+title: What am I currently doing?
 permalink: /now/
 ---
 # Hobbies
