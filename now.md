@@ -11,7 +11,7 @@ permalink: /now/
    - The Inflationary Universe: The Quest for a New Theory of Cosmic Origins
    - Why Buddhism is True
 
-# Nerdyness
+# Nerdiness
    - Most of my time daily revolves around solving problems and/or answering questions on different forums on networking.
    - Currently I am working towards the JNCIE Service Provider (JNCIE-SP), target date is September 27th, 2022.
 
