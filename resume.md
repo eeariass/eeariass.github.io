@@ -1,3 +1,4 @@
+## Summary
 Network Engineer with wide knowledge and experience in Enterprise and Service Provider routing & switching technologies.
 
 Ownership. Motivated. Collaborator. Mentor.
