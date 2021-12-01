@@ -17,6 +17,7 @@ permalink: /now/
 
 # Learning
    - Currently learning a new language, French! :)
+   - Drawing
 
 # Randomness
    - Growing a yeard in 2022
