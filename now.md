@@ -16,7 +16,7 @@ permalink: /now/
    - Currently I am working towards the JNCIE Service Provider (JNCIE-SP), target date is September 27th, 2022.
 
 # Learning
-   - Currently learning a new language, French! :)
+   - French
    - Drawing
 
 # Randomness
