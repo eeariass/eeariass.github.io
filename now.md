@@ -10,6 +10,7 @@ permalink: /now/
    - The Undiscovered Self
    - The Inflationary Universe: The Quest for a New Theory of Cosmic Origins
    - Why Buddhism is True
+   - El camino de la Espiritualidad
 
 # Nerdiness
    - Most of my time daily revolves around solving problems and/or answering questions on different forums on networking
