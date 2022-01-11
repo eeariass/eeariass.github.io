@@ -11,6 +11,7 @@ permalink: /now/
    - The Undiscovered Self
    - Why Buddhism is True
    - El camino de la Espiritualidad
+   - Men of Mathematics: The Lives and Achievements of the Great Mathematicians from Zeno to Poincaré
 
 # Nerdiness
    - Most of my time daily revolves around solving problems and/or answering questions on different forums on networking
