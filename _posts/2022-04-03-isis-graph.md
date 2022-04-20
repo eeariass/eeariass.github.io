@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Tip: Graphing the SPT with IS-IS in IOS-XR" 
+title: "Tip: Graphing the topology with IS-IS in IOS-XR" 
 slug: isis-graph
 ---
 
