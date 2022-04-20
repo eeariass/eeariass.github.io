@@ -4,7 +4,7 @@ title: "Tip: Graphing the SPT with IS-IS in IOS-XR"
 slug: isis-graph
 ---
 
-Short and hopefully useful tip. If you want to graph the IS-IS topology, IOS-XR has a new command where this can be easily done. Below:
+If you were troubleshooting an IS-IS issue, it is often useful to know the topology, all you need is in the link-state database (LSDB), as it posses the graph of the topology. Doing the mapping manually is not as fast as we wish, but thankfully IOS-XR has a new feature where we can ask for the topology graph. It can be useful while troubleshooting.
 
 ```perl
 RP/0/RP0/CPU0:XR1#show isis database graph 
@@ -24,7 +24,7 @@ graph "level-2" {
 }
 ```
 
-As seen, this gives us a result where the node name as well as its corresponding router ID is used to graph the topology. You can use a graphing online page such as https://edotor.net/ in order to graph it. For this particular topology, the result is seen below:
+As seen, this gives us the result as a graph with the name of the node and the router ID. 
 
 <img src="/assets/images/Graph.png" alt="">
 
