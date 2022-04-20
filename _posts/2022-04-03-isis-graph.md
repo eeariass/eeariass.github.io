@@ -29,6 +29,7 @@ graph "level-2" {
 This parse the LSDB and it gives us the graph of the topology, the result can be seen [here](https://is.gd/vcu9J5), as observed, the Node + Router ID are being used for this. 
 
 <img src="/assets/images/Graph.png" alt="">
-Hope it helps,
+
+HTH,
 
 Elvin
