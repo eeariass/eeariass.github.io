@@ -4,9 +4,9 @@ title: "Tip: Graphing the topology with IS-IS in IOS-XR"
 slug: isis-graph
 ---
 
-If you were troubleshooting routing issue, it is often useful to know the topology, right? :)
+If you were troubleshooting a routing issue, it is often useful to know the topology, right? :)
 
-For link-state protocols, all you need to graph the topology is inside the link-state database (LSDB), as it posses the view of the network. If your IGP happens to be IS-IS, IOS-XR has a new command where you can ask for the graph of the topology and it provides the resultant view, where you can use an online tool to visualize it.
+For link-state protocols, all you need to graph the topology is inside the link-state database (LSDB), as it posses the view of the network. If your IGP happens to be IS-IS, IOS-XR has a new command where you can ask for the graph of the topology and it provides the resultant view, for which you can use an online tool to visualize the topology.
 
 ```perl
 RP/0/RP0/CPU0:XR1#show isis database graph 
