@@ -26,7 +26,7 @@ graph "level-2" {
 
 As seen, this gives us a result where the node name as well as its corresponding router ID is used to graph the topology. You can use a graphing online page such as https://edotor.net/ in order to graph it. For this particular topology, the result is seen below:
 
-<img src="/assets/images/isis-graph.png" alt="">
+<img src="/assets/images/Graph.png" alt="">
 
 Hope it helps in troubleshooting.
 
