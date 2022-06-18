@@ -26,4 +26,4 @@ Paths: (2 available, best #2)
 ```
 As seen, the reason why the best path is path #2 is due to the fact that path #1 has a longer AS path. This is a quick and convenient way to check reason why the prefix has been chosen, which could help in production networks and/or CCIE Service Provider lab.
 
-Note: For `IOS-XE`, the command is similar, you do show `bgp <afi> <safi> best-path-reason` command.
+Note: For `IOS-XE`, the command is similar, you do `show bgp <afi> <safi> best-path-reason` command.
