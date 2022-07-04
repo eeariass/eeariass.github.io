@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Configuring BGP Origin Validation in Junos" 
+title: "BGP Origin Validation in Junos" 
 slug: rpki-junos
 ---
 
