@@ -44,7 +44,6 @@ footer-links:
   github: eeariass
   linkedin: elvin-arias-soto/
   rss: # just type anything here for a working RSS icon
-  twitter: eeariass
 
 plugins:
   - jekyll-seo-tag
